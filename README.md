@@ -1,6 +1,12 @@
 # ProjetoAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+Projeto feito com  [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+
+## Equipe Bootcamp generation - Equipe 4
+
+### @f-sartori | @Jeffdesantos | @gabriellyribeiro | @Guilhermegit-code | @ingridy-byte
+
+![](img-readme.png)
 
 ## Development server
 
