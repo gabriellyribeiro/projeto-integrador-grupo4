@@ -45,10 +45,12 @@ export class UsuarioNovoComponent implements OnInit {
       this.usuarioService.insert(this.usuario).subscribe((usuario: Usuario) =>{
         this.usuario = usuario;
         this.novo = false;
+        alert("Dado inserido com sucesso!");
       });
     } else {
       this.usuarioService.update(this.usuario).subscribe((usuario: Usuario) =>{
         this.usuario = usuario;
+        alert("Alterado com sucesso");
       });
     }
   }
