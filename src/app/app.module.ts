@@ -13,6 +13,9 @@ import { RegistrarComponent } from './registrar/registrar.component';
 import { ColecaoComponent } from './colecao/colecao.component';
 import { HttpClientModule } from '@angular/common/http';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { UsuarioListarComponent } from './usuario-listar/usuario-listar.component';
+import { UsuarioNovoComponent } from './usuario-novo/usuario-novo.component';
+import { UsuarioDeletarComponent } from './usuario-deletar/usuario-deletar.component';
 
 
 
@@ -27,7 +30,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AboutUsComponent,
     ContatoComponent,
     RegistrarComponent,
-    ColecaoComponent
+    ColecaoComponent,
+    UsuarioListarComponent,
+    UsuarioNovoComponent,
+    UsuarioDeletarComponent
   ],
   imports: [
     BrowserModule,
