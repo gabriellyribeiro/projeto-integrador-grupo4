@@ -12,7 +12,9 @@ import { ContatoComponent } from './contato/contato.component';
 import { RegistrarComponent } from './registrar/registrar.component';
 import { ColecaoComponent } from './colecao/colecao.component';
 import { HttpClientModule } from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+
+
 
 
 @NgModule({
@@ -31,10 +33,13 @@ import {FormsModule} from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
