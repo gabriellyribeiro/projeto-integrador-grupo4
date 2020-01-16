@@ -28,5 +28,8 @@ export class UsuarioService {
     return this.http.put(`http://cloud.professorisidro.com.br:8088/usuario/`, usuario);
   }
 
+  verificar(usuario: Usuario){
+    return this.http.post(`http://cloud.professorisidro.com.br:8088/usuario/login`, usuario);
+  }
   
 }
