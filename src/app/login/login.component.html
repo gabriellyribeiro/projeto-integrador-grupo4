@@ -48,16 +48,26 @@
               </div>
               <div class="col-sm-6">
                 <h2>Logar</h2>
-                <p>Insira os seus dados para se logar</p>
+                <p>Preencha os campos para se logar</p>
                 <div class="form-group">
-                  <label class="control-label" for="input-email">E-Mail</label>
-                  <input type="text" name="email" value="" placeholder="E-Mail" id="input-email" class="form-control" [(ngModel)]="usuario.email">
+
+                  <label class="control-label" for="input-email">E-mail</label>
+                  <input type="text" name="email" value="" placeholder="E-mail" id="input-email" class="form-control alert alert-primary" [(ngModel)]="usuario.email">
+                  <div class="alert alert-primary hidden " id="erro3" role="alert">
+                      <p style="color: red;">* Preencha seu e-mail</p>
+                     </div>
                 </div>
                 <div class="form-group">
                   <label class="control-label" for="input-password">Senha</label>
                   <input type="password" name="password" value="" placeholder="Senha" id="input-password" class="form-control" [(ngModel)]="usuario.senha">
-                  <a href="#" class="forgot">Esquecia a minha senha</a></div>
-                <input type="button" value="Login" id="button-login" data-loading-text="Loading..." class="btn btn-primary" (click)= "verifica()">
+                  <div class="alert alert-primary hidden " id="erro1" role="alert">
+                      <p style="color: red;">* Preencha sua senha</p>
+                     </div>
+                  <div class="alert alert-primary hidden " id="erro2" role="alert">
+                     <p style="color: red;">* Preencha os campos para logar</p>
+                    </div>
+                  <a href="#" class="forgot">Esqueci minha senha</a></div>
+                <input type="button" value="Login" id="button-login" data-loading-text="Loading..." class="btn btn-primary" (click)= "verifica() ">
               </div>
             </div>
           </div>

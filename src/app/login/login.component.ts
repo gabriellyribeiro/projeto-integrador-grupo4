@@ -21,15 +21,29 @@ export class LoginComponent implements OnInit {
   }
 
   verifica(){
+    var a = document.getElementById("erro2");
+    var senha = document.getElementById("erro1");
+    var email = document.getElementById("erro3");
+
     if(this.usuario.email == '' && this.usuario.senha == ''){
-      alert("Preencha um dos campos para se logar");
+        
+      a.className = "alert alert-primary";
+      
     }else if(this.usuario.senha == ''){
-      alert("O campo senha deve ser preenchido");
+     
+      senha.className = "alert alert-primary";
+      a.className = "alert alert-primary hidden";
+      email.className = "alert alert-primary hidden";
     }else if(this.usuario.email == ''){
-      alert("O campo email deve ser preenchido");
+     
+      email.className = "alert alert-primary";
+      a.className = "alert alert-primary hidden";
+      senha.className = "alert alert-primary hidden";
           
     }else{
-
+      a.className = "alert alert-primary hidden";
+      senha.className = "alert alert-primary hidden";
+      email.className = "alert alert-primary hidden";
     this.usuarioService.verificar(this.usuario).subscribe((usuario: Usuario)=>{
       this.usuario = usuario;
    
@@ -40,4 +54,5 @@ export class LoginComponent implements OnInit {
     });
   }
   }
+
 }
