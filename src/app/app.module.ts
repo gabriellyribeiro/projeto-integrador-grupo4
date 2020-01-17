@@ -18,6 +18,7 @@ import { UsuarioNovoComponent } from './usuario-novo/usuario-novo.component';
 import { UsuarioDeletarComponent } from './usuario-deletar/usuario-deletar.component';
 import { ProdutoSingleComponent } from './produto-single/produto-single.component';
 import { UserPageComponent } from './user-page/user-page.component';
+import { PerguntasComponent } from './perguntas/perguntas.component';
 
 
 
@@ -37,7 +38,8 @@ import { UserPageComponent } from './user-page/user-page.component';
     UsuarioNovoComponent,
     UsuarioDeletarComponent,
     ProdutoSingleComponent,
-    UserPageComponent
+    UserPageComponent,
+    PerguntasComponent
   ],
   imports: [
     BrowserModule,

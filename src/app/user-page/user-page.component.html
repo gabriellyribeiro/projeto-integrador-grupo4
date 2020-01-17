@@ -1,24 +1,68 @@
-<h1>Logado como: {{usuario?.nome}}</h1>
+<div class="breadcrumb parallax-container">
+    <div class="parallax"><img src="/assets/prlx.jpg" alt="#"></div>
+    <h1>Meu perfil</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Conta</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="user-page.html">Meu perfil</a></li>
+    </ul>
+</div>
+<div class="container" style="border-bottom: 20px;">
+    <div class="row">
+        <div class="col-sm-3 hidden-xs column-left" id="column-left">
+            <div id="borda" class="Categories left-sidebar-widget">
+                <div class="columnblock-title">Conta</div>
+                <div class="category_block">
+                    <ul class="box-category">
+                        <li><a href="#">Esqueci minha senha</a></li>
+                        <li><a href="#">Minha conta</a></li>
+                        <li><a href="#">Lista de desejos</a></li>
+                        <li><a href="#">Mais...</a></li>
+                        <li><a [routerLink]="['/usuario-listar']">Listar usuarios...</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
-<table class="table table-bordered">
+        <div class="container">
+            <div class="row">
+                <h1>Logado como: {{usuario?.nome}}</h1>
 
-    <tr>
-        <td class="text-left">Nome</td>
 
-        <td>{{usuario?.nome}}</td>
+                <div class="col-5">
+                    <table id="tabela">
 
-    </tr>
-    <tr>
-        <td>Email</td>
+                        <tr>
+                            <td class="col-sm-8 column-right">
+                                <h1>Nome</h1>
+                            </td>
 
-        <td>{{usuario?.email}}</td>
-    </tr>
-    <tr>
-        <td>Telefone</td>
 
-        <td>{{usuario?.telefone}}</td>
-    </tr>
-    <tr>
+                            <td>{{usuario?.nome}}</td>
 
-    </tr>
-</table>
+                        </tr>
+                        <tr>
+                            <td class=" column-right">
+                                <h1>Email</h1>
+                            </td>
+
+                            <td>{{usuario?.email}}</td>
+                        </tr>
+                        <tr>
+                            <td class=" column-right">
+                                <h1>Telefone</h1>
+                            </td>
+
+                            <td>{{usuario?.telefone}}</td>
+                        </tr>
+                        <tr>
+
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
