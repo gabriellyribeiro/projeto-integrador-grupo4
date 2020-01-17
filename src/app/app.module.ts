@@ -16,6 +16,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UsuarioListarComponent } from './usuario-listar/usuario-listar.component';
 import { UsuarioNovoComponent } from './usuario-novo/usuario-novo.component';
 import { UsuarioDeletarComponent } from './usuario-deletar/usuario-deletar.component';
+import { ProdutoSingleComponent } from './produto-single/produto-single.component';
+import { UserPageComponent } from './user-page/user-page.component';
 
 
 
@@ -33,7 +35,9 @@ import { UsuarioDeletarComponent } from './usuario-deletar/usuario-deletar.compo
     ColecaoComponent,
     UsuarioListarComponent,
     UsuarioNovoComponent,
-    UsuarioDeletarComponent
+    UsuarioDeletarComponent,
+    ProdutoSingleComponent,
+    UserPageComponent
   ],
   imports: [
     BrowserModule,

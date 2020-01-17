@@ -2,62 +2,60 @@
     <div class="parallax"><img src="/assets/prlx.jpg" alt="#"></div>
     <h1>Login</h1>
     <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="#">Conta</a></li>
-      <li><a href="login.html">Login</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Conta</a></li>
+        <li><a href="login.html">Login</a></li>
     </ul>
-  </div>
+</div>
 
-  <div class="container">
+<div class="container">
     <div class="row">
-      <div class="col-sm-3 hidden-xs column-left" id="column-left">
-        <div class="Categories left-sidebar-widget">
-          <div class="columnblock-title">Conta</div>
-          <div class="category_block">
-            <ul class="box-category">
-              <li><a href="login.html">Logar</a></li>
-              <li><a href="register.html">Registrar</a></li>
-              <li><a href="#">Esqueci minha senha</a></li>
-              <li><a href="#">Minha conta</a></li>
-              <li><a href="#">Lista de desejos</a></li>
-              <li><a href="#">Mais...</a></li>
-              <li><a [routerLink]="['/usuario-listar']">Listar usuários...</a></li>
-              
-            
-            </ul>
-          </div>
+        <div class="col-sm-3 hidden-xs column-left" id="column-left">
+            <div class="Categories left-sidebar-widget">
+                <div class="columnblock-title">Conta</div>
+                <div class="category_block">
+                    <ul class="box-category">
+                        <li><a href="login.html">Logar</a></li>
+                        <li><a href="register.html">Registrar</a></li>
+                        <li><a href="#">Esqueci minha senha</a></li>
+                        <li><a href="#">Minha conta</a></li>
+                        <li><a href="#">Lista de desejos</a></li>
+                        <li><a href="#">Mais...</a></li>
+                        <li><a [routerLink]="['/usuario-listar']">Listar usuários...</a></li>
+
+
+                    </ul>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-sm-9" id="content">
-        <div class="row">
-          <div class="col-sm-6">
-            <table>
-                <tr>
-                    <th>Nome</th>
-                    <th>Email</th>
-                    <th>Telefone</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-                <tr *ngFor="let usuario of usuarios">
-                    <td>{{usuario.nome}}</td>
-                    <td>{{usuario.telefone}}</td>
-                    <td>{{usuario.email}}</td>
-                    <td><a [routerLink]="['/usuario-novo', usuario.idUsuario]"><i class="fa fa-pencil"></i></a> </td>
-                    <td><a [routerLink]="['/usuario-deletar', usuario.idUsuario]"><i class="fa fa-eraser"></i></a> </td>
-                </tr>
-            </table>
-          </div>
-         
+
+        <div class="col-sm-9" id="content">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td class="text-center">Id</td>
+                            <td class="text-left">Nome</td>
+                            <td class="text-left">Email</td>
+                            <td class="text-left">Telefone</td>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let usuario of usuarios">
+                            <th scope="row">{{usuario.idUsuario}}</th>
+                            <td>{{usuario.nome}}</td>
+                            <td>{{usuario.email}}</td>
+                            <td>{{usuario.telefone}}</td>
+                            <td><a [routerLink]="['/usuario-novo', usuario.idUsuario]"><i class="fa fa-pencil"></i></a> </td>
+                            <td><a [routerLink]="['/usuario-deletar', usuario.idUsuario]"><i class="fa fa-eraser"></i></a> </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
-      </div>
+
+
     </div>
-  </div>
-
-
-
-
-
-
-
-
+</div>

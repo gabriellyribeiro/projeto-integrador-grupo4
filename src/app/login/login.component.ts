@@ -2,12 +2,14 @@
 import { Component, OnInit } from '@angular/core';
 import { UsuarioService } from '../service/usuario.service';
 import { Usuario } from '../model/usuario';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Globals } from '../model/globals';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  providers: [ Globals ]
 })
 export class LoginComponent implements OnInit {
 
@@ -15,7 +17,7 @@ export class LoginComponent implements OnInit {
 
   usuario: Usuario = new Usuario(0,'','','','');
 
-  constructor(private usuarioService: UsuarioService,private route: ActivatedRoute) { }
+  constructor(private usuarioService: UsuarioService,private route: ActivatedRoute, private router:Router) { }
 
   ngOnInit() {
   }
@@ -48,9 +50,12 @@ export class LoginComponent implements OnInit {
       this.usuario = usuario;
    
       alert("Usuario existente");
+      Globals.USUARIO = usuario;
+      this.router.navigate(['user-page']);
     }, err =>{
       console.log(`Erro cod: ${err.status}`);
       alert(`Email: ${this.usuario.email} , não encontrado :${err.status}`);
+      //this.router.navigate(['login']);
     });
   }
   }
