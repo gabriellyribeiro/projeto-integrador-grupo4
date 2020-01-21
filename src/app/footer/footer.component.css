@@ -1,0 +1,19 @@
+.hero-image {
+  background-image: url(./../../assets/img/gadgetalpha.png);
+  background-color: #fff;
+  height: 100px;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  text-align: center;
+
+  color: white;
+}
+
+div .estil {
+  background-image: url(./../../assets/img/testando.png);
+}
