@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Product } from '../model/product';
 
 @Injectable({
   providedIn: 'root'
@@ -10,11 +11,20 @@ export class ProductService {
 
 
   getAll() {
-    return this.http.get("http://cloud.professorisidro.com.br:8088/produtos");
+    return this.http.get("http://localhost:8080/produto");
   }
 
   getById(id: number) {
-    return this.http.get(`http://cloud.professorisidro.com.br:8088/produtos/${id}`);
+    return this.http.get(`http://localhost:8080/produto/${id}`);
+  }
+
+
+  insert(product: Product){
+    return this.http.post(`http://localhost:8080/produto/`, product);
+  }
+
+  update(product: Product){
+    return this.http.put(`http://localhost:8080/produto/`, product);
   }
 
 }

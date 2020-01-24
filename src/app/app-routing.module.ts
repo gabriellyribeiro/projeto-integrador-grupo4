@@ -11,6 +11,8 @@ import { UsuarioNovoComponent } from './usuario-novo/usuario-novo.component';
 import { UsuarioDeletarComponent } from './usuario-deletar/usuario-deletar.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { PerguntasComponent } from './perguntas/perguntas.component';
+import { ProdutoComponent } from './produto/produto.component';
+import { ProdutoNovoComponent } from './produto-novo/produto-novo.component';
 
 
 const routes: Routes = [
@@ -25,7 +27,10 @@ const routes: Routes = [
   {path: 'usuario-novo/:id', component: UsuarioNovoComponent},
   {path: 'usuario-deletar/:id', component: UsuarioDeletarComponent},
   {path: 'user-page', component: UserPageComponent},
-  {path: 'perguntas', component:PerguntasComponent}
+  {path: 'perguntas', component:PerguntasComponent},
+  {path: 'produto', component: ProdutoComponent},
+  {path: 'produto-novo/:id', component: ProdutoNovoComponent},
+  {path: 'produto-novo', component: ProdutoNovoComponent}
   
 ];
 

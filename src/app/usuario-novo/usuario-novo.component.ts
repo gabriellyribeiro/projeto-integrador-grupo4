@@ -21,6 +21,7 @@ export class UsuarioNovoComponent implements OnInit {
   ngOnInit() {
 
     let id:number = this.route.snapshot.params["id"];
+    
     if(id == undefined){
       this.novo = true;
     } else {
