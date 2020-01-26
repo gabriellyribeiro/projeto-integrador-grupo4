@@ -13,6 +13,8 @@ import { UserPageComponent } from './user-page/user-page.component';
 import { PerguntasComponent } from './perguntas/perguntas.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { ProdutoNovoComponent } from './produto-novo/produto-novo.component';
+import { ProdutoSingleComponent } from './produto-single/produto-single.component';
+
 
 
 const routes: Routes = [
@@ -30,7 +32,9 @@ const routes: Routes = [
   {path: 'perguntas', component:PerguntasComponent},
   {path: 'produto', component: ProdutoComponent},
   {path: 'produto-novo/:id', component: ProdutoNovoComponent},
-  {path: 'produto-novo', component: ProdutoNovoComponent}
+  {path: 'produto-novo', component: ProdutoNovoComponent},
+  {path: 'produto-single', component: ProdutoSingleComponent},
+  {path: 'produto-single/:id', component: ProdutoSingleComponent},
   
 ];
 

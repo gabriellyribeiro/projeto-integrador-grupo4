@@ -44,6 +44,7 @@ import { ProdutoNovoComponent } from './produto-novo/produto-novo.component';
     PerguntasComponent,
     ProdutoComponent,
     ProdutoNovoComponent
+    
   ],
   imports: [
     BrowserModule,

@@ -43,6 +43,7 @@
             <li><a href="#">Cameras</a></li>
             <li><a href="#">MP3 Players</a></li>
             <li><a [routerLink]="['/produto-novo']">Produto novo.</a></li>
+            <li><a [routerLink]="['/produto-single']">Produto single test.</a></li>
           </ul>
         </div>
       </div>
@@ -169,13 +170,13 @@
         <div class="product-layout product-list col-xs-12"  >
           <div class="product-thumb">
             <div class="image product-imageblock">
-            <a href="#">
+            <a [routerLink]="['/produto-single', product.id]">
             <img src= "{{product.imgUrl}}" alt="produto" title="produto" class="img-responsive"  style="width: 250px; height:270px ;"/>
             <img src="{{product.imgUrl}}" alt="produto" title="produto" class="img-responsive" style="width: 250px; height:270px ;" />
             </a>
               <ul class="button-group grid-btn">
                 <li>
-                  <button type="button" class="wishlist" data-toggle="tooltip" data-placement="top" title="Adicionar a lista de desejos" ><i class="fa fa-heart-o"></i></button>
+                  <a [routerLink]="['/produto-single', product.id]"></a><button type="button" class="wishlist" data-toggle="tooltip" data-placement="top" title="Adicionar a lista de desejos" ><i class="fa fa-heart-o"></i></button>
                 </li>
                 <li>
                   <button type="button" class="compare" data-toggle="tooltip" data-placement="top" title="Comparar este produto" ><i class="fa fa-exchange"></i></button>
@@ -198,7 +199,7 @@
                  
                     
                 <li>
-                  <button type="button" class="wishlist" data-toggle="tooltip" data-placement="top" title="Adicionar a lista de desejos" ><i class="fa fa-heart-o"></i></button>
+                  <a [routerLink]="['/produto-single', product.id]"></a><button type="button" class="wishlist" data-toggle="tooltip" data-placement="top" title="Adicionar a lista de desejos" ><i class="fa fa-heart-o"></i></button>
                 </li>
                 <li>
                   <button type="button" class="compare" data-toggle="tooltip" data-placement="top" title="Comparar este produto" ><i class="fa fa-exchange"></i></button>

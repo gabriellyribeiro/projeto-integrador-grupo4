@@ -40,28 +40,46 @@
             </div>
           </div>
         </div>
+
+       
+
         <div class="col-sm-7 prodetail">
-          
-          <h2 class="productpage-title">Nome do produto: <input type="text"  [(ngModel)]="product.name" placeholder="Nome"></h2>
-          <ul class="list-unstyled productinfo-details-top">
-            <li>
-              <h2 class="productpage-price">Preco: <input type="text"  [(ngModel)]="product.price" placeholder="Digite o preço"></h2>
-              <h2 class="productpage-price">Descrição: <input type="text"  [(ngModel)]="product.description" placeholder="Descrição do produto " ></h2>
-              <h2 class="productpage-price">URL da Imagem: <input type="text"  [(ngModel)]="product.imgUrl" placeholder="imagem" ></h2>
-              
-            <br>
-            <ul class="button-group grid-btn">
-                
-                <li>
-                  <button type="button" class="addtocart-btn" title="Salvar" (click)="salvarProd()">Salvar</button>
-                </li>
-              </ul>
-            </li>
-            
-          </ul>
+          <br><br><br>
+          <div class="form-group">
+            <label for="input-address-2" class="col-sm-2 control-label">Titulo:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="nomeProduto" placeholder="Nome do produto" value=""  [(ngModel)]="product.name">
+            </div>
+            <br><br><br>
+          </div>
+          <div class="form-group">
+            <label for="input-address-2" class="col-sm-2 control-label">Preço:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="precoProduto" placeholder="Preço" value=""  [(ngModel)]="product.price">
+            </div>
+            <br><br><br>
+          </div>
+          <div class="form-group">
+            <label for="input-address-2" class="col-sm-2 control-label">Descrição:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="descricaoProduto" placeholder="Descrição" value=""  [(ngModel)]="product.description">
+            </div>
+            <br><br><br>
+          </div>
+          <div class="form-group">
+            <label for="input-address-2" class="col-sm-2 control-label">URL da imagem:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="urlProduto" placeholder="url da imagem" value=""  [(ngModel)]="product.imgUrl">
+            </div>
+            <br><br><br>
+          </div>
+
+          <br><br><br>
+          <input type="submit" class="btn btn-primary" value="Salvar"  (click)="salvarProd()">
+         
           <hr>
 
-          <a href="">Listar Produtos</a>
+          
           <!-- <ul class="list-unstyled product_info">
             <li>
               <label>Brand:</label>
@@ -73,7 +91,7 @@
               <label>Availability:</label>
               <span> In Stock</span></li>
           </ul> -->
-          <hr>
+          
           <div>
              
           <!-- </div>
