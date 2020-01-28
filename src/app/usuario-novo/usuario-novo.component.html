@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col-sm-5">
           <div class="thumbnails">
-            <div><a class="thumbnail fancybox" href="" title=""><img src="{{product.imgUrl}}" title="Imagem do usuario" alt="Imagem do usuario" /></a></div>
+            <div><a class="thumbnail fancybox" href="" title=""><img src="" title="Imagem do usuario" alt="Imagem do usuario" /></a></div>
             
           </div>
         </div>
@@ -35,7 +35,7 @@
           <div class="form-group">
             <label for="input-address-2" class="col-sm-2 control-label">Nome:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="nomeUsuario" placeholder="Nome do produto" value=""  [(ngModel)]="usuario.nome">
+              <input type="text" class="form-control" id="nomeUsuario" placeholder="Nome" value=""  [(ngModel)]="usuario.nome">
               <div class="alert alert-primary hidden" id="erroNome" role="alert">
                 <p style="color: red;">* Preencha o nome</p>
             </div>
@@ -46,9 +46,12 @@
           <div class="form-group">
             <label for="input-address-2" class="col-sm-2 control-label">Email:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="emailUsuario" placeholder="Preço" value=""  [(ngModel)]="usuario.email">
+              <input type="text" class="form-control" id="emailUsuario" placeholder="Email" value=""  [(ngModel)]="usuario.email" (keyup) = "validateEmail()">
               <div class="alert alert-primary hidden" id="erroEmail" role="alert">
                 <p style="color: red;">* Preencha o email</p>
+                <div class="alert alert-primary hidden" id="emailValidError" role="alert">
+                  <p style="color: red;">* Digite um email válido</p>
+                </div>
             </div>
             
             </div>
@@ -57,7 +60,7 @@
           <div class="form-group">
             <label for="input-address-2" class="col-sm-2 control-label">Telefone:</label>
             <div class="col-sm-10">
-              <input type="text" class="form-control" id="telefoneUsuario" placeholder="Descrição" value=""  [(ngModel)]="usuario.telefone">
+              <input type="text" class="form-control" id="telefoneUsuario" placeholder="Telefone" value=""  [(ngModel)]="usuario.telefone">
               <div class="alert alert-primary hidden" id="erroTelefone" role="alert">
                 <p style="color: red;">* Preencha o telefone</p>
             </div>

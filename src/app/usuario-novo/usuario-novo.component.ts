@@ -47,8 +47,29 @@ export class UsuarioNovoComponent implements OnInit {
   }
 
 
-  salvar(){
+  validateEmail() {
+    var emailValue = this.usuario.email;
+    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    console.log(re.test(emailValue));
 
+    var erroEmailValid = document.getElementById("emailValidError");
+
+    if(re.test(emailValue)){
+ 
+      erroEmailValid.className = "alert alert-primary hidden";
+      this.valido = true;
+      
+    }else{
+      erroEmailValid.className = "alert alert-primary ";
+      this.valido = false;
+
+    }
+  }
+
+
+  salvar(){
+    
+  
     var nome = document.getElementById("erroNome");
     var email = document.getElementById("erroEmail");
     var telefone = document.getElementById("erroTelefone");
@@ -78,10 +99,15 @@ export class UsuarioNovoComponent implements OnInit {
       this.valido = true;
     }
 
+    this.validateEmail();
+
     if(this.usuario.nome == null || this.usuario.nome == "" ||this.usuario.email == null || this.usuario.email == ""|| this.usuario.telefone == null || this.usuario.telefone == "" ){
       this.valido = false;
     }
 
+
+    
+    
 
 
     if(this.novo && this.valido){
@@ -89,17 +115,19 @@ export class UsuarioNovoComponent implements OnInit {
         this.usuario = usuario;
         this.novo = false;
         alert("Dado inserido com sucesso!");
-        this.router.navigate(['usuario-listar']);
+       this.router.navigate(['usuario-listar']);
       });
     } else {
       if(this.valido){
       this.usuarioService.update(this.usuario).subscribe((usuario: Usuario) =>{
         this.usuario = usuario;
         alert("Alterado com sucesso");
-        this.router.navigate(['usuario-listar']);
+       this.router.navigate(['usuario-listar']);
       });
     }
   }
+
+
   }
 
 }
