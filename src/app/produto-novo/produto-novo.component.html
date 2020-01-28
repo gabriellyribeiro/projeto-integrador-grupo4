@@ -49,6 +49,9 @@
             <label for="input-address-2" class="col-sm-2 control-label">Titulo:</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="nomeProduto" placeholder="Nome do produto" value=""  [(ngModel)]="product.name">
+              <div class="alert alert-primary hidden" id="erroTitulo" role="alert">
+                <p style="color: red;">* Preencha o titulo</p>
+            </div>
             </div>
             <br><br><br>
           </div>
@@ -56,6 +59,9 @@
             <label for="input-address-2" class="col-sm-2 control-label">Preço:</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="precoProduto" placeholder="Preço" value=""  [(ngModel)]="product.price">
+              <div class="alert alert-primary hidden" id="erroPreco" role="alert">
+                <p style="color: red;">* Preencha o preço</p>
+            </div>
             </div>
             <br><br><br>
           </div>
@@ -63,6 +69,10 @@
             <label for="input-address-2" class="col-sm-2 control-label">Descrição:</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="descricaoProduto" placeholder="Descrição" value=""  [(ngModel)]="product.description">
+              <div class="alert alert-primary hidden" id="erroDescricao" role="alert">
+                <p style="color: red;">* Preencha a descrição</p>
+            </div>
+            
             </div>
             <br><br><br>
           </div>
@@ -70,6 +80,10 @@
             <label for="input-address-2" class="col-sm-2 control-label">URL da imagem:</label>
             <div class="col-sm-10">
               <input type="text" class="form-control" id="urlProduto" placeholder="url da imagem" value=""  [(ngModel)]="product.imgUrl">
+              <div class="alert alert-primary hidden" id="erroUrl" role="alert">
+                <p style="color: red;">* Preencha a url</p>
+            </div>
+            
             </div>
             <br><br><br>
           </div>

@@ -12,7 +12,7 @@ import { UsuarioService } from './../service/usuario.service';
 })
 export class RegistrarComponent implements OnInit {
   novo: boolean = false;
-
+  valido: boolean = false;
   usuario: Usuario = new Usuario(0,'','','','');
 
   title = 'teste';
@@ -64,19 +64,124 @@ createForm() {
       });
     }
 
+  
+
+    verificar(){
+
+      var nome = document.getElementById("erroNome");
+      var telefone = document.getElementById("erroTelefone");
+      var email = document.getElementById("erroEmail");
+      var senha = document.getElementById("erroSenha");
+      var senha2 = document.getElementById("erroSenha2");
+      var confirmarSenha = (<HTMLInputElement>document.getElementById("confirmarSenha")).value;
+      var senha_1 = (<HTMLInputElement>document.getElementById("senha")).value;
+      
+      if(this.usuario.nome == null || this.usuario.nome == ""){
+        nome.className = "alert alert-primary";
+        this.valido = false;
+      }else{
+        nome.className = "alert alert-primary hidden";
+        this.valido = true;
+      }
+
+      if(this.usuario.telefone == null || this.usuario.telefone == ""){
+        telefone.className = "alert alert-primary";
+        this.valido = false;
+      }else{
+        telefone.className = "alert alert-primary hidden";
+        this.valido = true;
+      }
+
+      if(this.usuario.email == null || this.usuario.email == ""){
+        email.className = "alert alert-primary";
+        this.valido = false;
+      }else{
+        email.className = "alert alert-primary hidden";
+        this.valido = true;
+      }
+
+      if(this.usuario.senha == null || this.usuario.senha == ""){
+        senha.className = "alert alert-primary";
+        this.valido = false;
+      }else{
+        senha.className = "alert alert-primary hidden";
+        this.valido = true;
+      }
+
+      if(senha_1 != confirmarSenha){
+        senha2.className = "alert alert-primary";
+        console.log("Senha");
+        this.valido = false;
+      }else{
+        senha2.className = "alert alert-primary hidden";
+        this.valido = true;
+      }
+
+      if(this.usuario.nome == null || this.usuario.nome == "" || this.usuario.telefone == null || this.usuario.telefone == "" || this.usuario.email == null || this.usuario.email == "" ||this.usuario.senha == null || this.usuario.senha == "" || senha_1 != confirmarSenha ){
+        this.valido = false;
+      }else{
+
+      }
+
+
+      return this.valido;
+    }
+
+    validateEmail() {
+      var emailValue = (<HTMLInputElement>document.getElementById("email")).value;
+      var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      console.log(re.test(emailValue));
+      var erroEmailValid = document.getElementById("erroEmailValid");
+
+      if(re.test(emailValue)){
+   
+        erroEmailValid.className = "alert alert-primary hidden";
+        this.valido = true;
+      }else{
+        erroEmailValid.className = "alert alert-primary ";
+        this.valido = false;
+
+      }
+    }
+
+    verificarSenha(){
+      var confirmarSenha = (<HTMLInputElement>document.getElementById("confirmarSenha")).value;
+      var senha_1 = (<HTMLInputElement>document.getElementById("senha")).value;
+      var erroSenha = document.getElementById("erroSenhaC");
+
+      if(senha_1.indexOf("@") == -1){
+          erroSenha.className = "alert alert-primary";
+          this.valido = false;
+      }else{
+        erroSenha.className = "alert alert-primary hidden";
+      }
+      return this.valido
+    }
+
+    
     salvar(){
-      if(this.novo){
+
+      
+
+      this.verificar();
+      this.validateEmail();
+
+
+      if(this.novo && this.valido){
         this.usuarioService.insert(this.usuario).subscribe((usuario: Usuario) =>{
           this.usuario = usuario;
           this.novo = false;
           alert("Usuário "+ usuario.nome + " salvo com sucesso!")
         });
       } else {
+
+        if(this.valido){
         this.usuarioService.update(this.usuario).subscribe((usuario: Usuario) =>{
           this.usuario = usuario;
           alert("ERRO"+ usuario.nome + " já existente!")
         });
       }
+    }
     }
    
   }

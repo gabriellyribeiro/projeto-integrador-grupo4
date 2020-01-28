@@ -12,6 +12,7 @@ export class ProdutoNovoComponent implements OnInit {
 
 
   novo: boolean = false;
+  valido: boolean = false;
 
   product: Product = new Product(0,'',0.0,'','');
 
@@ -51,7 +52,58 @@ export class ProdutoNovoComponent implements OnInit {
 
 
   salvarProd(){
-    if(this.novo){
+
+    var nome = document.getElementById("erroTitulo");
+    var preco = document.getElementById("erroPreco");
+    var descricao = document.getElementById("erroDescricao");
+    var url = document.getElementById("erroUrl");
+
+   
+     
+
+    if(this.product.name == null || this.product.name == ""){
+      nome.className = "alert alert-primary";
+      this.valido = false;
+    }else{
+      nome.className = "alert alert-primary hidden";
+      this.valido = true;
+    }
+      
+    if(this.product.price == null || this.product.price <= 0){
+      preco.className = "alert alert-primary";
+      this.valido = false;
+    }else{
+      preco.className = "alert alert-primary hidden";
+      this.valido = true;
+    }
+      
+    
+    if(this.product.description == null || this.product.description == ""){
+      descricao.className = "alert alert-primary";
+      this.valido = false;
+    }else{
+      descricao.className = "alert alert-primary hidden";
+      this.valido = true;
+    }
+     
+      
+    if(this.product.imgUrl == null || this.product.imgUrl == ""){
+      url.className = "alert alert-primary";
+      this.valido = false;
+    }else{
+      url.className = "alert alert-primary hidden";
+      this.valido = true;
+    }
+     
+    if(this.product.name == null || this.product.name == "" || this.product.price == null || this.product.price <= 0 || this.product.description == null || this.product.description == "" || this.product.imgUrl == null || this.product.imgUrl == "" ){
+      this.valido = false;
+   }
+    
+
+
+
+
+    if(this.novo && this.valido){
       this.productService.insert(this.product).subscribe((product: Product) =>{
         this.product = product;
         this.novo = false;
@@ -59,12 +111,17 @@ export class ProdutoNovoComponent implements OnInit {
         this.router.navigate(['colecao']);
       });
     } else {
+      if(this.valido){
       this.productService.update(this.product).subscribe((product: Product) =>{
         this.product = product;
         console.log(product);
         alert("Alterado com sucesso");
         this.router.navigate(['colecao']);
       });
+
+    }else{
+
+    }
     }
   }
 

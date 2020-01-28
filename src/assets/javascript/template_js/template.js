@@ -4,13 +4,13 @@ function cartdropdown(){
 
 	 $(".cart-dropdown-button").click(function(){
 
-        $(".cart-dropdown-menu").slideToggle("slow");
+       $(".cart-dropdown-menu").slideToggle("fast");
 
     });
 
 }	
 
-$(document).ready(function(){cartdropdown();});
+//$(document).ready(function(){cartdropdown();});
 
 
 

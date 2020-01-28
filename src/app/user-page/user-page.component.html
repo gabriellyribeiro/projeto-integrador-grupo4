@@ -8,61 +8,89 @@
         <li><a href="user-page.html">Meu perfil</a></li>
     </ul>
 </div>
-<div class="container" style="border-bottom: 20px;">
-    <div class="row">
-        <div class="col-sm-3 hidden-xs column-left" id="column-left">
-            <div id="borda" class="Categories left-sidebar-widget">
-                <div class="columnblock-title">Conta</div>
-                <div class="category_block">
-                    <ul class="box-category">
-                        <li><a href="#">Esqueci minha senha</a></li>
-                        <li><a href="#">Minha conta</a></li>
-                        <li><a href="#">Lista de desejos</a></li>
-                        <li><a href="#">Mais...</a></li>
-                        <li><a [routerLink]="['/usuario-listar']">Listar usuarios...</a></li>
-                    </ul>
-                </div>
+
+
+        
+    <div class="container">
+      <div class="row">
+        <div class="content col-sm-12">
+          <div class="row">
+            <div class="col-sm-5">
+              <div class="thumbnails">
+                <div><a class="thumbnail fancybox"  title=""><img src="" title="" alt="Foto do usuario" /></a></div>
+                
+              </div>
             </div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <h1>Logado como: {{usuario?.nome}}</h1>
-
-
-                <div class="col-5">
-                    <table id="tabela">
-
-                        <tr>
-                            <td class="col-sm-8 column-right">
-                                <h1>Nome</h1>
-                            </td>
-
-
-                            <td>{{usuario?.nome}}</td>
-
-                        </tr>
-                        <tr>
-                            <td class=" column-right">
-                                <h1>Email</h1>
-                            </td>
-
-                            <td>{{usuario?.email}}</td>
-                        </tr>
-                        <tr>
-                            <td class=" column-right">
-                                <h1>Telefone</h1>
-                            </td>
-
-                            <td>{{usuario?.telefone}}</td>
-                        </tr>
-                        <tr>
-
-                        </tr>
-                    </table>
-                </div>
-
+            <div class="col-sm-7 prodetail">
+              <h1 class="productpage-title">{{usuario?.nome}}</h1>
+              
+              <ul class="list-unstyled productinfo-details-top">
+                <li>
+                  <h2 class="productpage-price">{{usuario?.email}}</h2>
+                </li>
+                
+              </ul>
+              <hr>
+              <ul class="list-unstyled product_info">
+                
+                <li>
+                  <label>Telefone:</label>
+                  <span> {{usuario.telefone}}</span></li>
+                </ul>
+              <hr>
             </div>
-        </div>
+          </div>
+
+          <form enctype="multipart/form-data" method="post" action="#">
+            <div class="table-responsive">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <td class="text-center">Imagem</td>
+                    <td class="text-left">Nome do produto</td>
+                    <td class="text-left">Modelo</td>
+                    <td class="text-left">Quantidade</td>
+                    <td class="text-right">Preço</td>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="text-center"><a href=""><img class="img-thumbnail" title="Produto" alt="Produto" src=""></a></td>
+                    <td class="text-left"><a href="">Teste</a></td>
+                    <td class="text-left">product 11</td>
+                    <td class="text-left"><div style="max-width: 200px;" class="input-group btn-block">
+                        <input type="text" class="form-control quantity" size="1" value="1" name="quantity">
+                        <span class="input-group-btn">
+                        <button class="btn btn-primary" title="" data-toggle="tooltip" type="submit" data-original-title="Update"><i class="fa fa-refresh"></i></button>
+                        <button  class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove"><i class="fa fa-times-circle"></i></button>
+                        </span></div></td>
+                    <td class="text-right">R$254.00</td>
+                    
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </form>
+        
+    
+      
+    
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
 </div>

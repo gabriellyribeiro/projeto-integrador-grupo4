@@ -20,6 +20,7 @@ import { ProdutoSingleComponent } from './produto-single/produto-single.componen
 const routes: Routes = [
   {path: 'home' , component: HomeComponent},
   {path: '#' , component: HomeComponent},
+  {path: '' , component: HomeComponent},
   {path: 'about-us', component: AboutUsComponent},
   {path: 'login', component: LoginComponent},
   {path: 'contato', component: ContatoComponent},

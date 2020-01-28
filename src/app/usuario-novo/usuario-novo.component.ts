@@ -1,7 +1,7 @@
 import { UsuarioService } from './../service/usuario.service';
 import { Component, OnInit } from '@angular/core';
 import { Usuario } from '../model/usuario';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-usuario-novo',
@@ -10,18 +10,24 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class UsuarioNovoComponent implements OnInit {
  
- 
+  valido: boolean = false;
   novo: boolean = false;
 
   usuario: Usuario = new Usuario(0,'','','','');
   
 
-  constructor(private route: ActivatedRoute, private usuarioService:UsuarioService) { }
+  constructor(private route: ActivatedRoute, private usuarioService:UsuarioService, private router: Router) { }
 
   ngOnInit() {
 
     let id:number = this.route.snapshot.params["id"];
+
+  
     
+
+
+
+
     if(id == undefined){
       this.novo = true;
     } else {
@@ -42,18 +48,58 @@ export class UsuarioNovoComponent implements OnInit {
 
 
   salvar(){
-    if(this.novo){
+
+    var nome = document.getElementById("erroNome");
+    var email = document.getElementById("erroEmail");
+    var telefone = document.getElementById("erroTelefone");
+
+
+    if(this.usuario.nome == null || this.usuario.nome == ""){
+      nome.className = "alert alert-primary";
+      this.valido = false;
+    }else{
+      nome.className = "alert alert-primary hidden";
+      this.valido = true;
+    }
+
+    if(this.usuario.email == null || this.usuario.email == ""){
+      email.className = "alert alert-primary";
+      this.valido = false;
+    }else{
+      email.className = "alert alert-primary hidden";
+      this.valido = true;
+    }
+
+    if(this.usuario.telefone == null || this.usuario.telefone == ""){
+      telefone.className = "alert alert-primary";
+      this.valido = false;
+    }else{
+      telefone.className = "alert alert-primary hidden";
+      this.valido = true;
+    }
+
+    if(this.usuario.nome == null || this.usuario.nome == "" ||this.usuario.email == null || this.usuario.email == ""|| this.usuario.telefone == null || this.usuario.telefone == "" ){
+      this.valido = false;
+    }
+
+
+
+    if(this.novo && this.valido){
       this.usuarioService.insert(this.usuario).subscribe((usuario: Usuario) =>{
         this.usuario = usuario;
         this.novo = false;
         alert("Dado inserido com sucesso!");
+        this.router.navigate(['usuario-listar']);
       });
     } else {
+      if(this.valido){
       this.usuarioService.update(this.usuario).subscribe((usuario: Usuario) =>{
         this.usuario = usuario;
         alert("Alterado com sucesso");
+        this.router.navigate(['usuario-listar']);
       });
     }
+  }
   }
 
 }
