@@ -1,5 +1,7 @@
 import { Component, OnInit, ElementRef, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
+import { Router } from '@angular/router';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +10,25 @@ import { DOCUMENT } from '@angular/common';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private elementRef: ElementRef,@Inject(DOCUMENT) private doc) { }
+  user: String;
+  username: string;
+  log: boolean;
+  constructor(private elementRef: ElementRef,@Inject(DOCUMENT) private doc,private router: Router, private loginService: LoginService) { }
 
   ngOnInit() {
+
+    if (!localStorage.getItem("token")) {
+      alert("Você não pode acessar está página sem estar logado")
+      this.router.navigate(['login']);
+  
+    }
+    else {
+      this.user = localStorage.getItem("nome");
+      alert("Logado")
+      this.loginService.log.next(true);
+      this.router.navigate(['user-page']);
+    }
+
     var s1 = document.createElement("script");
     s1.type = "text/javascript";
     s1.src = "../assets/javascript/global.js";
@@ -62,5 +80,7 @@ export class HeaderComponent implements OnInit {
     this.elementRef.nativeElement.appendChild(s10);
 
   }
+
+  
 
 }

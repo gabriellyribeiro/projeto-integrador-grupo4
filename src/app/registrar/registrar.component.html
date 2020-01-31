@@ -106,7 +106,7 @@
                   senha</label>
                 <div class="col-sm-9">
                   <input formControlName="confirmar" type="password" class="form-control" id="confirmarSenha"
-                    placeholder="confirmar senha" [(ngModel)]="confirmarSenha">
+                    placeholder="confirmar senha" [(ngModel)]="confirmarSenha" [(ngModel)]="usuario.senhaConf">
                   <div class="alert alert-primary hidden" id="erroSenha2" role="alert">
                     <p style="color: red;">* As senhas devem ser iguais</p>
                   </div>

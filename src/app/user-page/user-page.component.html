@@ -22,11 +22,11 @@
               </div>
             </div>
             <div class="col-sm-7 prodetail">
-              <h1 class="productpage-title">{{usuario?.nome}}</h1>
+              <h1 class="productpage-title">{{user}}</h1>
               
               <ul class="list-unstyled productinfo-details-top">
                 <li>
-                  <h2 class="productpage-price">{{usuario?.email}}</h2>
+                  <h2 class="productpage-price">{{email}}</h2>
                 </li>
                 
               </ul>
@@ -35,7 +35,7 @@
                 
                 <li>
                   <label>Telefone:</label>
-                  <span> {{usuario.telefone}}</span></li>
+                  <span> {{usuario?.telefone}}</span></li>
                 </ul>
               <hr>
             </div>
@@ -63,7 +63,7 @@
                         <input type="text" class="form-control quantity" size="1" value="1" name="quantity">
                         <span class="input-group-btn">
                         <button class="btn btn-primary" title="" data-toggle="tooltip" type="submit" data-original-title="Update"><i class="fa fa-refresh"></i></button>
-                        <button  class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove"><i class="fa fa-times-circle"></i></button>
+                        <button  class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove" (click)= "logout()"><i class="fa fa-times-circle"></i></button>
                         </span></div></td>
                     <td class="text-right">R$254.00</td>
                     

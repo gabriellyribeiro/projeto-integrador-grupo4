@@ -13,7 +13,7 @@ export class UsuarioNovoComponent implements OnInit {
   valido: boolean = false;
   novo: boolean = false;
 
-  usuario: Usuario = new Usuario(0,'','','','');
+  usuario: Usuario = new Usuario(0,'','','','','');
   
 
   constructor(private route: ActivatedRoute, private usuarioService:UsuarioService, private router: Router) { }

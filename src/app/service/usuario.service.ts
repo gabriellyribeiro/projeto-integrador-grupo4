@@ -13,23 +13,27 @@ export class UsuarioService {
 
 
   getAll(){
-    return this.http.get(`http://cloud.professorisidro.com.br:8088/usuario/all`);
+    return this.http.get(`http://localhost:8080/usuario/all`);
   }
 
   getById(id: number){
-    return this.http.get(`http://cloud.professorisidro.com.br:8088/usuario/${id}`);
+    return this.http.get(`http://localhost:8080/usuario/${id}`);
   }
 
   insert(usuario: Usuario){
-    return this.http.post(`http://cloud.professorisidro.com.br:8088/usuario/new`, usuario);
+    return this.http.post(`http://localhost:8080/usuario/new`, usuario);
   }
 
   update(usuario: Usuario){
-    return this.http.put(`http://cloud.professorisidro.com.br:8088/usuario/`, usuario);
+    return this.http.put(`http://localhost:8080/usuario/`, usuario);
+  }
+
+  logar(usuario: Usuario){
+    return this.http.post(`http://localhost:8080/usuario/login`, usuario);
   }
 
   verificar(usuario: Usuario){
-    return this.http.post(`http://cloud.professorisidro.com.br:8088/usuario/login`, usuario);
+    return this.http.post(`http://localhost:8080/usuario/login`, usuario);
   }
   
 }

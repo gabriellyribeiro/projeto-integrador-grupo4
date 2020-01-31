@@ -13,7 +13,7 @@ import { UsuarioService } from './../service/usuario.service';
 export class RegistrarComponent implements OnInit {
   novo: boolean = false;
   valido: boolean = false;
-  usuario: Usuario = new Usuario(0,'','','','');
+  usuario: Usuario = new Usuario(0,'','','','','');
 
   title = 'teste';
   angForm: FormGroup;

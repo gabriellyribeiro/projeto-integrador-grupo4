@@ -161,12 +161,13 @@
                 <li><a [routerLink]="'/home'" class="parent">Home</a> </li>
                 <li><a [routerLink]="'/colecao'" class="parent">Coleção</a> </li>
                 <li><a href="#" class="parent">Teste 1</a> </li>
-                <li><a href="#" class="parent">Teste 2</a> </li>
+                <li><a  class="parent" (click)= "logout()">Teste 2</a> </li>
 
                 <li><a href="#" class="active parent">Conta</a>
                     <ul>
                         <li><a [routerLink]="'/registrar'">Minha conta</a></li>
-                        <li><a [routerLink]="'/login'">Logar</a></li>
+                        <li><a [routerLink]="'/login'" *ngIf='!log' >Minha conta</a></li>
+                        <li><a [routerLink]="'/login'" *ngIf='log'>Logar</a></li>
                         <li><a href="#">Esqueci a minha senha</a></li>
                     </ul>
                     <li><a href="#" class="active parent">Saiba mais</a>

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Globals } from '../model/globals';
 import { Usuario } from '../model/usuario';
 import { Router } from '@angular/router';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-user-page',
@@ -12,8 +13,10 @@ import { Router } from '@angular/router';
 export class UserPageComponent implements OnInit {
 
   usuario: Usuario;
-
-  constructor(private router: Router) { 
+  user: string;
+  email: string;
+  
+  constructor(private router: Router, private loginService: LoginService) { 
 
   }
 
@@ -23,17 +26,40 @@ export class UserPageComponent implements OnInit {
    // var email = document.getElementById("email");
    // var tel = document.getElementById("telefone");
   
-    if (Globals.USUARIO == undefined){
-      this.router.navigate(['/login']);
+   // if (Globals.USUARIO == undefined){
+   //   this.router.navigate(['/login']);
+
+   if (!localStorage.getItem("token")) {
+    alert("Você não pode acessar está página sem estar logado")
+    this.router.navigate(['login']);
+
+  }
+  else {
+    this.user = localStorage.getItem("nome");
+    alert("Logado")
+    this.loginService.log.next(true); 
+    //this.usuario = Globals.USUARIO;
+    this.user = localStorage.getItem("nome");
+    this.email = localStorage.getItem("usuarioEmail");
+   // this.router.navigate(['user-page']);
+  }
+
       }
-      else{
+    //  else{
         //console.log(this.usuario.nome);
-      this.usuario = Globals.USUARIO;
+   
      // nome.innerHTML = this.usuario.nome;
      // email.innerHTML = this.usuario.email;
      // tel.innerHTML = this.usuario.telefone;
-      }
       
+      
+  logout(){
+    
+    this.loginService.log.next(false);
+    localStorage.clear();
+  
+    this.router.navigate(['login']);
   }
+  
 
 }
