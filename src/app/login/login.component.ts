@@ -25,13 +25,13 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
 
     if (!localStorage.getItem("token")) {
-      alert("Você não pode acessar está página sem estar logado")
+     // alert("Você não pode acessar está página sem estar logado")
       this.router.navigate(['login']);
   
     }
     else {
       this.user = localStorage.getItem("nome");
-      alert("Logado")
+      //alert("Logado")
       this.loginService.log.next(true); 
       //this.usuario = Globals.USUARIO;
       
@@ -87,6 +87,7 @@ export class LoginComponent implements OnInit {
     });
       //this.router.navigate(['/user-page']);
       this.buscarUsuario();
+      location.reload();
  
 
 
@@ -103,7 +104,7 @@ export class LoginComponent implements OnInit {
         alert("Usuario existente");
         Globals.USUARIO = usuario;
         //this.loginService.log.next(false);
-       this.router.navigate(['user-page']);
+      // this.router.navigate(['user-page']);
       }, err =>{
         console.log(`Erro cod: ${err.status}`);
         //alert(`Email: ${this.usuario.email} , não encontrado :${err.status}`);

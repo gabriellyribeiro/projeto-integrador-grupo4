@@ -12,21 +12,24 @@ export class HeaderComponent implements OnInit {
 
   user: String;
   username: string;
-  log: boolean;
+  log2: boolean;
   constructor(private elementRef: ElementRef,@Inject(DOCUMENT) private doc,private router: Router, private loginService: LoginService) { }
 
   ngOnInit() {
 
     if (!localStorage.getItem("token")) {
-      alert("Você não pode acessar está página sem estar logado")
-      this.router.navigate(['login']);
+      //alert("Você não pode acessar está página sem estar logado")
+     // this.router.navigate(['login']);
+     this.log2 = false;
   
     }
     else {
       this.user = localStorage.getItem("nome");
-      alert("Logado")
+      //alert("Logado")
       this.loginService.log.next(true);
-      this.router.navigate(['user-page']);
+      this.log2 = true;
+      
+     // this.router.navigate(['user-page']);
     }
 
     var s1 = document.createElement("script");

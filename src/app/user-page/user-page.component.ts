@@ -30,13 +30,13 @@ export class UserPageComponent implements OnInit {
    //   this.router.navigate(['/login']);
 
    if (!localStorage.getItem("token")) {
-    alert("Você não pode acessar está página sem estar logado")
+    //alert("Você não pode acessar está página sem estar logado")
     this.router.navigate(['login']);
 
   }
   else {
     this.user = localStorage.getItem("nome");
-    alert("Logado")
+   // alert("Logado")
     this.loginService.log.next(true); 
     //this.usuario = Globals.USUARIO;
     this.user = localStorage.getItem("nome");
@@ -57,7 +57,7 @@ export class UserPageComponent implements OnInit {
     
     this.loginService.log.next(false);
     localStorage.clear();
-  
+    location.reload();
     this.router.navigate(['login']);
   }
   
