@@ -21,8 +21,6 @@ import { UserPageComponent } from './user-page/user-page.component';
 import { PerguntasComponent } from './perguntas/perguntas.component';
 import { ProdutoComponent } from './produto/produto.component';
 import { ProdutoNovoComponent } from './produto-novo/produto-novo.component';
-import { PromocaoComponent } from './promocao/promocao.component';
-import { MaisvendidosComponent } from './maisvendidos/maisvendidos.component';
 
 
 
@@ -45,9 +43,7 @@ import { MaisvendidosComponent } from './maisvendidos/maisvendidos.component';
     UserPageComponent,
     PerguntasComponent,
     ProdutoComponent,
-    ProdutoNovoComponent,
-    PromocaoComponent,
-    MaisvendidosComponent
+    ProdutoNovoComponent
     
   ],
   imports: [

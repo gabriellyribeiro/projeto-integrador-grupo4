@@ -13,7 +13,7 @@ export class UsuarioService {
 
 
   getAll(){
-    return this.http.get(`http://localhost:8080/usuario/all`);
+    return this.http.get(`http://localhost:8080/usuario`);
   }
 
   getById(id: number){
@@ -21,7 +21,7 @@ export class UsuarioService {
   }
 
   insert(usuario: Usuario){
-    return this.http.post(`http://localhost:8080/usuario/new`, usuario);
+    return this.http.post(`http://localhost:8080/usuario`, usuario);
   }
 
   update(usuario: Usuario){
@@ -29,11 +29,15 @@ export class UsuarioService {
   }
 
   logar(usuario: Usuario){
-    return this.http.post(`http://localhost:8080/usuario/login`, usuario);
+    return this.http.post(`http://localhost:8080/usuario`, usuario);
   }
 
   verificar(usuario: Usuario){
     return this.http.post(`http://localhost:8080/usuario/login`, usuario);
+  }
+
+  delete(id: number){
+    return this.http.delete(`http://localhost:8080/usuario/${id}`, );
   }
   
 }

@@ -6,7 +6,8 @@
                     <div class="language">
                         <form action="#" method="post" enctype="multipart/form-data" id="language">
                             <div class="btn-group">
-                                <button class="btn btn-link dropdown-toggle" data-toggle="dropdown" aria-expanded="false"> Português do
+                                <button class="btn btn-link dropdown-toggle" data-toggle="dropdown"
+                                    aria-expanded="false"> Português do
                                     Brasil <span class="caret"></span></button>
                                 <ul class="dropdown-menu">
 
@@ -33,7 +34,8 @@
                 <div class="top-right pull-right">
                     <div id="top-links" class="nav pull-right">
                         <ul class="list-inline">
-                            <li class="dropdown"><a href="#" title="My Account" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span
+                            <li class="dropdown"><a href="#" title="My Account" class="dropdown-toggle"
+                                    data-toggle="dropdown"><i class="fa fa-user" aria-hidden="true"></i><span
                                         *ngIf="log2">{{user}}</span> <span class="caret"></span></a>
                                 <ul class="dropdown-menu dropdown-menu-right">
                                     <li><a [routerLink]="'/registrar'">Registrar</a></li>
@@ -53,7 +55,8 @@
     <div class="header-inner">
         <div class="col-sm-3 col-xs-3 header-left">
             <div id="logo">
-                <a [routerLink]="'/home'"><img src="/assets/img/logo.png" title="E-Commerce" alt="E-Commerce" class="img-responsive" /></a>
+                <a [routerLink]="'/home'"><img src="/assets/img/logo.png" title="E-Commerce" alt="E-Commerce"
+                        class="img-responsive" /></a>
             </div>
         </div>
         <div class="col-sm-9 col-xs-9 header-right">
@@ -73,12 +76,15 @@
                             <tbody>
                                 <tr>
                                     <td class="text-center">
-                                        <a href="#"><img class="img-thumbnail" title="lorem ippsum dolor dummy" alt="lorem ippsum dolor dummy" src="/assets/img/product/7product56x72.jpg"></a>
+                                        <a href="#"><img class="img-thumbnail" title="lorem ippsum dolor dummy"
+                                                alt="lorem ippsum dolor dummy"
+                                                src="/assets/img/product/7product56x72.jpg"></a>
                                     </td>
                                     <td class="text-left"><a href="#">lorem ippsum dolor dummy</a></td>
                                     <td class="text-right">x 1</td>
                                     <td class="text-right">$254.00</td>
-                                    <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove" type="button"><i class="fa fa-times"></i></button></td>
+                                    <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove"
+                                            type="button"><i class="fa fa-times"></i></button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -88,12 +94,15 @@
                             <tbody>
                                 <tr>
                                     <td class="text-center">
-                                        <a href="#"><img class="img-thumbnail" title="lorem ippsum dolor dummy" alt="lorem ippsum dolor dummy" src="/assets/img/product/7product56x72.jpg"></a>
+                                        <a href="#"><img class="img-thumbnail" title="lorem ippsum dolor dummy"
+                                                alt="lorem ippsum dolor dummy"
+                                                src="/assets/img/product/7product56x72.jpg"></a>
                                     </td>
                                     <td class="text-left"><a href="#">lorem ippsum dolor dummy</a></td>
                                     <td class="text-right">x 1</td>
                                     <td class="text-right">$254.00</td>
-                                    <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove" type="button"><i class="fa fa-times"></i></button></td>
+                                    <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove"
+                                            type="button"><i class="fa fa-times"></i></button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -103,12 +112,15 @@
                             <tbody>
                                 <tr>
                                     <td class="text-center">
-                                        <a href="#"><img class="img-thumbnail" title="lorem ippsum dolor dummy" alt="lorem ippsum dolor dummy" src="/assets/img/product/7product56x72.jpg"></a>
+                                        <a href="#"><img class="img-thumbnail" title="lorem ippsum dolor dummy"
+                                                alt="lorem ippsum dolor dummy"
+                                                src="/assets/img/product/7product56x72.jpg"></a>
                                     </td>
                                     <td class="text-left"><a href="#">lorem ippsum dolor dummy</a></td>
                                     <td class="text-right">x 1</td>
                                     <td class="text-right">$254.00</td>
-                                    <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove" type="button"><i class="fa fa-times"></i></button></td>
+                                    <td class="text-center"><button class="btn btn-danger btn-xs" title="Remove"
+                                            type="button"><i class="fa fa-times"></i></button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -136,7 +148,8 @@
                                 </tbody>
                             </table>
                             <p class="text-right"> <span class="btn-viewcart"><a href="cart.html"><strong><i
-                                                class="fa fa-shopping-cart"></i> Carrinho</strong></a></span> <span class="btn-checkout"><a href="checkout.html"><strong><i class="fa fa-share"></i>
+                                                class="fa fa-shopping-cart"></i> Carrinho</strong></a></span> <span
+                                    class="btn-checkout"><a href="checkout.html"><strong><i class="fa fa-share"></i>
                                             Checkout</strong></a></span> </p>
                         </div>
                     </li>
@@ -157,23 +170,23 @@
             <ul class="main-navigation">
                 <li><a [routerLink]="'/home'" class="parent">Home</a> </li>
                 <li><a [routerLink]="'/colecao'" class="parent">Coleção</a> </li>
-                <li><a [routerLink]="'/promocao'" class="parent">Promoções</a> </li>
-                <li><a [routerLink]="'/maisvendidos'" class="parent">Mais vendidos</a> </li>
+                <li><a href="#" class="parent" disabled>Promoções</a> </li>
+                <li><a class="parent" (click)="logout()">Mais vendidos</a> </li>
 
-                <li><a [routerLink]="'/user-page'" class="active parent">Conta</a>
+                <li><a a [routerLink]="'/user-page'" class="active parent">Conta</a>
                     <ul>
-                        <li><a [routerLink]="'/registrar'" *ngIf='!log2'>Resgistrar</a></li>
+                        <li><a [routerLink]="'/registrar'"  *ngIf='!log2'>Resgistrar</a></li>
                         <li><a [routerLink]="'/user-page'" *ngIf='log2'>Minha conta</a></li>
                         <li><a [routerLink]="'/login'" *ngIf='!log2'>Logar</a></li>
                         <li><a href="#" *ngIf='!log2'>Esqueci a minha senha</a></li>
                     </ul>
-                    <li><a href="#" class="active parent">Saiba mais</a>
-                        <ul>
-                            <li><a [routerLink]="'/contato'">Contato</a></li>
-                            <li><a [routerLink]="'/about-us'">Sobre nós</a></li>
-                            <li><a [routerLink]="'/perguntas'">Perguntas Frequentes</a></li>
-                        </ul>
-                    </li>
+                <li><a href="#" class="active parent">Saiba mais</a>
+                    <ul>
+                        <li><a [routerLink]="'/contato'">Contato</a></li>
+                        <li><a [routerLink]="'/about-us'">Sobre nós</a></li>
+                        <li><a [routerLink]="'/perguntas'">Perguntas Frequentes</a></li>
+                    </ul>
+                </li>
 
 
             </ul>
@@ -184,7 +197,7 @@
 <script src="/assets/javascript/DioProgress.js"></script>
 <script src="/assets/javascript/jquery.parallax.js"></script>
 <script>
-    jQuery(document).ready(function($) {
+    jQuery(document).ready(function ($) {
         $('.parallax').parallax();
     });
 </script>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup,  FormBuilder,  Validators, FormControl } from '@angular/forms';
 import { Usuario } from '../model/usuario';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterLinkActive, Router } from '@angular/router';
 import { CustomValidators } from '../custom-validators';
 import { UsuarioService } from './../service/usuario.service';
 
@@ -17,7 +17,7 @@ export class RegistrarComponent implements OnInit {
 
   title = 'teste';
   angForm: FormGroup;
-   constructor(private fb: FormBuilder, private route: ActivatedRoute, private usuarioService:UsuarioService) {
+   constructor(private fb: FormBuilder, private route: ActivatedRoute, private router: Router, private usuarioService:UsuarioService) {
     
 
     this.createForm();
@@ -64,7 +64,9 @@ createForm() {
       });
     }
 
-  
+    redirect(){
+      this.router.navigate(['login']);
+    }
 
     verificar(){
 
@@ -117,7 +119,9 @@ createForm() {
         this.valido = true;
       }
 
-      if(this.usuario.nome == null || this.usuario.nome == "" || this.usuario.telefone == null || this.usuario.telefone == "" || this.usuario.email == null || this.usuario.email == "" ||this.usuario.senha == null || this.usuario.senha == "" || senha_1 != confirmarSenha ){
+      this.validateEmail();
+
+      if(this.usuario.nome == null || this.usuario.nome == "" || this.usuario.telefone == null || this.usuario.telefone == "" || this.usuario.email == null || this.usuario.email == "" ||this.usuario.senha == null || this.usuario.senha == "" || confirmarSenha != senha_1){
         this.valido = false;
       }else{
 
@@ -164,7 +168,7 @@ createForm() {
       
 
       this.verificar();
-      this.validateEmail();
+     
 
 
       if(this.novo && this.valido){
@@ -172,6 +176,8 @@ createForm() {
           this.usuario = usuario;
           this.novo = false;
           alert("Usuário "+ usuario.nome + " salvo com sucesso!")
+          this.redirect()
+          
         });
       } else {
 
@@ -181,6 +187,7 @@ createForm() {
           alert("ERRO"+ usuario.nome + " já existente!")
         });
       }
+      
     }
     }
    

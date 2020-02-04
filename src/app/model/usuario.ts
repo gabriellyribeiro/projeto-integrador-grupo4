@@ -10,5 +10,12 @@ export class Usuario{
         public senhaConf: string,
     ){}
 
-   
+    reset(){
+        this.idUsuario = undefined
+        this.nome = undefined
+        this.telefone = undefined
+        this.email = undefined
+        this.senha = undefined
+        this.senhaConf = undefined
+    }
 }
