@@ -20,14 +20,14 @@
             <li><a href="#">Minha conta</a></li>
             <li><a href="#">Lista de desejos</a></li>
             <li><a href="#">Mais...</a></li>
-            <li><a [routerLink]="['/usuario-listar']">Listar usuarios...</a></li>
+            <li><a [routerLink]="['/usuario-listar']">Listar usuários...</a></li>
 
           </ul>
         </div>
       </div>
     </div>
     <div class="col-sm-9" id="content">
-      <p>Se você já possui uma conta <a [routerLink]="'/login'">logue-se aqui</a>.</p>
+      <p>Se você já possui uma conta <a [routerLink]="'/login'">efetue o login aqui</a>.</p>
       <form class="form-horizontal" enctype="multipart/form-data" method="post" action="register.html">
         <fieldset id="account">
           <legend>Dados</legend>
@@ -73,10 +73,10 @@
                   <input formControlName="email" name="email" ngModel email type="email" class="form-control" id="email"
                     placeholder="email" [(ngModel)]="usuario.email" (keyup)="validateEmail()">
                   <div class="alert alert-primary hidden" id="erroEmail" role="alert">
-                    <p style="color: red;">* Preencha o campo email</p>
+                    <p style="color: red;">* Preencha o campo e-mail</p>
                   </div>
                   <div class="alert alert-primary hidden" id="erroEmailValid" role="alert">
-                    <p style="color: red;">* Digite um email válido</p>
+                    <p style="color: red;">* Digite um e-mail válido</p>
                   </div>
                 </div>
               </div>
@@ -119,7 +119,7 @@
 
 
         <div class="buttons">
-          <div class="pull-right">Você aceitra os termos <a class="agree" href="#"><b>de privacidade</b></a>
+          <div class="pull-right">Você aceita os termos <a class="agree" href="#"><b>de privacidade</b></a>
             <input type="checkbox" value="1" name="agree">
             &nbsp;
             <input type="submit" class="btn btn-success" class="btn btn-primary" value="Continuar" (click)="salvar()">
