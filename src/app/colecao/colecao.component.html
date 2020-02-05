@@ -7,34 +7,6 @@
     </ul>
 </div>
 <div class="container">
-<<<<<<< HEAD
-  <div class="row">
-    <div id="column-left" class="col-sm-3 hidden-xs column-left">
-      <div class="Categories left-sidebar-widget">
-        <div class="columnblock-title">Top Categories</div>
-        <div class="category_block">
-          <ul class="box-category treeview">
-            <li><a href="#" class="">Produtos</a></li>
-            <li><a href="#">Tablets</a></li>
-            <li><a href="#">Software</a></li>
-            <li><a href="#">Phones & PDAs</a></li>
-            <li><a href="#">Cameras</a></li>
-            <li><a href="#">MP3 Players</a></li>
-            <li><a [routerLink]="['/produto-novo']">Adicionar produtos.</a></li>
-            <li><a [routerLink]="['/categoria-novo']">Novas categorias</a></li>
-            <li><a [routerLink]="['/produto-single']">Produto single test.</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="filter left-sidebar-widget">
-        <div class="columnblock-title">Filtros</div>
-        <div class="filter-block">
-          <div class="list-group">
-            <p class="list-group-item">Cor</p>
-            <div class="list-group-item">
-              <div id="filter-group1">
-                <label class="checkbox">
-=======
     <div class="row">
         <div id="column-left" class="col-sm-3 hidden-xs column-left">
             <div class="Categories left-sidebar-widget">
@@ -60,7 +32,6 @@
                         <div class="list-group-item">
                             <div id="filter-group1">
                                 <label class="checkbox">
->>>>>>> 0a6b6ed48d7bd28a90b79bb07a45e3cc8f54cafd
                   <input name="filter[]" type="checkbox" value="1" />
                   Preto (7)</label>
                                 <label class="checkbox">
@@ -141,8 +112,8 @@
               <option value="ASC" selected="selected">Padrão</option>
               <option value="ASC">Nome (A - Z)</option>
               <option value="DESC">Nome (Z - A)</option>
-              <option value="ASC">Preço (Menor &gt; Maior)</option>
-              <option value="DESC">Preço (Maior &gt; Menor)</option>
+              <option value="ASC">Preço (Menor > Maior)</option>
+              <option value="DESC">Preço (Maior > Menor)</option>
               <option value="DESC">Avaliação (Maior)</option>
               <option value="ASC">Avaliação (Menor)</option>
               <option value="ASC">Categoria (A - Z)</option>
@@ -160,71 +131,6 @@
               <option value="75">75</option>
               <option value="100">100</option>
             </select>
-<<<<<<< HEAD
-          </div>
-        </div>
-        <div class="col-md-6 list-grid-wrapper"> <a href="#" id="compare-total">Produtos comparados (0)</a>
-          <div class="btn-group btn-list-grid">
-            <button type="button" id="list-view" class="btn btn-default list" data-toggle="tooltip" title="Lista"></button>
-            <button type="button" id="grid-view" class="btn btn-default grid" data-toggle="tooltip" title="Grade"></button>
-          </div>
-        </div>
-      </div>
-      <br/>
-
-
-      <div class="grid-list-wrapper" *ngFor="let product of products" >
-      
-        
-        <div class="product-layout product-list col-xs-12"  >
-          <div class="product-thumb">
-            <div class="image product-imageblock">
-            <a [routerLink]="['/produto-single', product.idProduto]">
-            <img src= "{{product.imgUrl}}" alt="produto" title="produto" class="img-responsive"  style="width: 250px; height:270px ;"/>
-            <img src="{{product.imgUrl}}" alt="produto" title="produto" class="img-responsive" style="width: 250px; height:270px ;" />
-            </a>
-              <ul class="button-group grid-btn">
-                <li>
-                  <a [routerLink]="['/produto-single', product.idProduto]"></a><button type="button" class="wishlist" data-toggle="tooltip" data-placement="top" title="Adicionar a lista de desejos" ><i class="fa fa-heart-o"></i></button>
-                </li>
-                <li>
-                  <button type="button" class="compare" data-toggle="tooltip" data-placement="top" title="Comparar este produto" ><i class="fa fa-exchange"></i></button>
-                </li>
-                <li>
-                  <a [routerLink]="['/produto-novo', product.idProduto]"><button type="button" class="quick-view" data-toggle="tooltip" data-placement="top" title="Alterar produto" ><i class="fa fa-pencil"></i></button></a>
-                </li>
-               
-                <li>
-                  <button type="button" class="addtocart-btn" title="Adicionar ao carrinho">Adicionar ao carrinho</button>
-                </li>
-              </ul>
-            </div>
-            <div class="caption product-detail">
-              <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-              <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">{{product.nome}}</a></h4>
-              <p class="price product-price">R$ {{product.preco}}<span class="price-tax">Ex Tax: R$100.00</span></p>
-              <p class="product-desc">{{product.qtd}}</p>
-              <ul class="button-group list-btn">
-                 
-                    
-                <li>
-                  <a [routerLink]="['/produto-single', product.idProduto]"></a><button type="button" class="wishlist" data-toggle="tooltip" data-placement="top" title="Adicionar a lista de desejos" ><i class="fa fa-heart-o"></i></button>
-                </li>
-                <li>
-                  <button type="button" class="compare" data-toggle="tooltip" data-placement="top" title="Comparar este produto" ><i class="fa fa-exchange"></i></button>
-                </li>
-                
-                <li>
-                  <a [routerLink]="['/produto-novo', product.idProduto]"><button type="button" class="quick-view" data-toggle="tooltip" data-placement="top" title="Alterar produto" ><i class="fa fa-pencil"></i></button></a>
-                </li>
-                
-              </ul>
-              <ul class="button-group list-btn">
-                  <li>
-                      <button type="button" class="addtocart-btn" title="Adicionar ao carrinho">Adicionar ao carrinho</button>
-                  </li>
-              </ul>
-=======
                     </div>
                 </div>
                 <div class="col-md-6 list-grid-wrapper"> <a href="#" id="compare-total">Produtos comparados (0)</a>
@@ -267,7 +173,7 @@
                             <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span>                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span>                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
                             <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">{{product.name}}</a></h4>
                             <p class="price product-price">R$ {{product.price}}<span class="price-tax">Ex Tax: R$100.00</span></p>
-                            <p class="product-desc">{{product.description}}</p>
+                            <p class="product-desc">{{product.deion}}</p>
                             <ul class="button-group list-btn">
 
 
@@ -305,11 +211,10 @@
                     <ul class="pagination">
                         <li class="active"><span>1</span></li>
                         <li><a href="category.html">2</a></li>
-                        <li><a href="category.html">&gt;</a></li>
-                        <li><a href="category.html">&gt;|</a></li>
+                        <li><a href="category.html">></a></li>
+                        <li><a href="category.html">>|</a></li>
                     </ul>
                 </div>
->>>>>>> 0a6b6ed48d7bd28a90b79bb07a45e3cc8f54cafd
             </div>
         </div>
     </div>
