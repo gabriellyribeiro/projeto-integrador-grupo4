@@ -13,7 +13,7 @@ export class VendedorNovoComponent implements OnInit {
   valido: boolean = false;
   novo: boolean = false;
 
-  vendedor: Vendedor = new Vendedor(0,'','','','','',null,null);
+  vendedor: Vendedor = new Vendedor(0,'','','','','',null,null,null);
   constructor(private route: ActivatedRoute, private vendedorService:VendedorService, private router: Router) { }
 
   ngOnInit() {

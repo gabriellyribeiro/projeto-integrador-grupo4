@@ -1,211 +1,127 @@
 <div class="breadcrumb parallax-container">
-    <div class="parallax"><img src="/assets/prlx.jpg" alt="#"></div>
-    <h1>Registrar</h1>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="#">Conta</a></li>
-        <li><a href="register.html">Registrar</a></li>
-    </ul>
+  <div class="parallax"><img src="/assets/prlx.jpg" alt="#"></div>
+  <h1>Registrar</h1>
+  <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Conta</a></li>
+      <li><a href="register.html">Registrar</a></li>
+  </ul>
 </div>
 <div class="container">
-<<<<<<< HEAD
   <div class="row">
-    <div class="col-sm-3 hidden-xs column-left" id="column-left">
-      <div class="Categories left-sidebar-widget">
-        <div class="columnblock-title">Conta</div>
-        <div class="category_block">
-          <ul class="box-category">
-            <li><a [routerLink]="['/logar']">Logar</a></li>
-            <li><a [routerLink]="['/logar']">Registrar</a></li>
-            <li><a href="#">Esqueci minha senha</a></li>
-            <li><a [routerLink]="['/user-page']">Minha conta</a></li>
-            <li><a href="#">Lista de desejos</a></li>
-            <li><a href="#">Mais...</a></li>
-            <li><a [routerLink]="['/usuario-listar']">Listar usuários...</a></li>
+      <div class="col-sm-3 hidden-xs column-left" id="column-left">
+          <div class="Categories left-sidebar-widget">
+              <h1>Conta</h1>
+              <div class="category_block">
+                  <ul class="box-category">
+                      <li><a href="login.html">Logar</a></li>
+                      <li><a href="register.html">Registrar</a></li>
+                      <li><a href="#">Esqueci minha senha</a></li>
+                      <li><a href="#">Minha conta</a></li>
+                      <li><a href="#">Lista de desejos</a></li>
+                      <li><a href="#">Mais...</a></li>
+                      <li><a [routerLink]="['/usuario-listar']">Listar usuários...</a></li>
 
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="col-sm-9" id="content">
-      <p>Se você já possui uma conta <a [routerLink]="'/login'">efetue o login aqui</a>.</p>
-      <form class="form-horizontal" enctype="multipart/form-data" method="post" action="register.html">
-        <fieldset id="account">
-          <legend>Dados</legend>
-
-
-
-          <form [formGroup]="angForm" novalidate>
-
-            <div class="form-group required">
-              <div class="form-group">
-                <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Nome</label>
-                <div class="col-sm-9">
-                  <input formControlName="teste" type="text" class="form-control" id="erro" placeholder="Nome"
-                    [(ngModel)]="usuario.nome">
-                  <div class="alert alert-primary hidden" id="erroNome" role="alert">
-                    <p style="color: red;">* Preencha o campo nome</p>
-                  </div>
-                </div>
+                  </ul>
               </div>
-
-            </div>
-
-            <div class="form-group required">
-              <div class="form-group">
-                <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Telefone</label>
-                <div class="col-sm-9">
-                  <input formControlName="telefone" ngModel maxlength="11" type="text" class="form-control"
-                    id="input-firstname" placeholder="Telefone" [(ngModel)]="usuario.telefone">
-                  <div class="alert alert-primary hidden" id="erroTelefone" role="alert">
-                    <p style="color: red;">* Preencha o campo telefone</p>
-                  </div>
-                  
-=======
-    <div class="row">
-        <div class="col-sm-3 hidden-xs column-left" id="column-left">
-            <div class="Categories left-sidebar-widget">
-                <h1>Conta</h1>
-                <div class="category_block">
-                    <ul class="box-category">
-                        <li><a href="login.html">Logar</a></li>
-                        <li><a href="register.html">Registrar</a></li>
-                        <li><a href="#">Esqueci minha senha</a></li>
-                        <li><a href="#">Minha conta</a></li>
-                        <li><a href="#">Lista de desejos</a></li>
-                        <li><a href="#">Mais...</a></li>
-                        <li><a [routerLink]="['/usuario-listar']">Listar usuários...</a></li>
-
-                    </ul>
->>>>>>> 0a6b6ed48d7bd28a90b79bb07a45e3cc8f54cafd
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-9" id="content">
-            <p>Se você já possui uma conta <a [routerLink]="'/login'">efetue o login aqui</a>.</p>
-            <form class="form-horizontal" enctype="multipart/form-data" method="post" action="register.html">
-                <fieldset id="account">
-
-                    <h1>Seus Dados</h1>
-
-
-
-
-                    <form [formGroup]="angForm" novalidate>
-
-                        <div class="form-group required">
-                            <div class="form-group">
-                                <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Nome</label>
-                                <div class="col-sm-9">
-                                    <input formControlName="teste" type="text" class="form-control" id="erro" placeholder="Nome" [(ngModel)]="usuario.nome">
-                                    <div class="alert alert-primary hidden" id="erroNome" role="alert">
-                                        <p style="color: red;">* Preencha o campo nome</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="form-group required">
-                            <div class="form-group">
-                                <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Telefone</label>
-                                <div class="col-sm-9">
-                                    <input formControlName="telefone" ngModel maxlength="11" type="text" class="form-control" id="input-firstname" placeholder="Telefone" [(ngModel)]="usuario.telefone">
-                                    <div class="alert alert-primary hidden" id="erroTelefone" role="alert">
-                                        <p style="color: red;">* Preencha o campo telefone</p>
-                                    </div>
-
-                                </div>
-                            </div>
-
-
-                        </div>
-
-                        <div class="form-group required">
-                            <div class="form-group">
-                                <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Email</label>
-                                <div class="col-sm-9">
-                                    <input formControlName="email" name="email" ngModel email type="email" class="form-control" id="email" placeholder="email" [(ngModel)]="usuario.email" (keyup)="validateEmail()">
-                                    <div class="alert alert-primary hidden" id="erroEmail" role="alert">
-                                        <p style="color: red;">* Preencha o campo e-mail</p>
-                                    </div>
-                                    <div class="alert alert-primary hidden" id="erroEmailValid" role="alert">
-                                        <p style="color: red;">* Digite um e-mail válido</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="form-group required">
-                            <div class="form-group">
-                                <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Senha</label>
-                                <div class="col-sm-9">
-                                    <input formControlName="senha" type="password" class="form-control" id="senha" placeholder="senha" [(ngModel)]="senha" [(ngModel)]="usuario.senha" (keyup)="verificarSenha()">
-                                    <div class="alert alert-primary hidden" id="erroSenha" role="alert">
-                                        <p style="color: red;">* Preencha o campo senha</p>
-                                    </div>
-                                    <div class="alert alert-primary hidden" id="erroSenhaC" role="alert">
-                                        <p style="color: red;">* Senha fraca</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <div class="form-group required">
-                            <div class="form-group">
-                                <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Confirmar
-                  senha</label>
-                                <div class="col-sm-9">
-                                    <input formControlName="confirmar" type="password" class="form-control" id="confirmarSenha" placeholder="confirmar senha" [(ngModel)]="confirmarSenha" [(ngModel)]="usuario.senhaConf">
-                                    <div class="alert alert-primary hidden" id="erroSenha2" role="alert">
-                                        <p style="color: red;">* As senhas devem ser iguais</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
-                </fieldset>
-
-
-
-                <div class="buttons">
-                    <div class="pull-right">Você aceita os termos <a class="agree" href="#"><b>de privacidade</b></a>
-                        <input type="checkbox" value="1" name="agree"> &nbsp;
-                        <input type="submit" class="btn btn-success" class="btn btn-primary" value="Continuar" (click)="salvar()">
-                    </div>
-                </div>
-<<<<<<< HEAD
-              </div>
-            </div>
-            <div class="form-group required">
-              <div class="form-group">
-                <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Tipo</label>
-                <div class="col-sm-9">
-                  <input  type="text" class="form-control" id="confirmarSenha" [(ngModel)]="usuario.tipo" value="Comum" disabled>
-                 
-                  
-                  <div class="alert alert-primary hidden" id="erroSenha2" role="alert">
-                    <p style="color: red;">* As senhas devem ser iguais</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </form>
-        </fieldset>
-
-
-
-        <div class="buttons">
-          <div class="pull-right">Você aceita os termos <a class="agree" href="#"><b>de privacidade</b></a>
-            <input type="checkbox" value="1" name="agree">
-            &nbsp;
-            <input type="submit" class="btn btn-success" class="btn btn-primary" value="Continuar" (click)="salvar()">
           </div>
-=======
-            </form>
->>>>>>> 0a6b6ed48d7bd28a90b79bb07a45e3cc8f54cafd
-        </div>
-    </div>
+      </div>
+      <div class="col-sm-9" id="content">
+          <p>Se você já possui uma conta <a [routerLink]="'/login'">efetue o login aqui</a>.</p>
+          <form class="form-horizontal" enctype="multipart/form-data" method="post" action="register.html">
+              <fieldset id="account">
+
+                  <h1>Seus Dados</h1>
+
+
+
+
+                  <form [formGroup]="angForm" novalidate>
+
+                      <div class="form-group required">
+                          <div class="form-group">
+                              <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Nome</label>
+                              <div class="col-sm-9">
+                                  <input formControlName="teste" type="text" class="form-control" id="erro" placeholder="Nome" [(ngModel)]="usuario.nome">
+                                  <div class="alert alert-primary hidden" id="erroNome" role="alert">
+                                      <p style="color: red;">* Preencha o campo nome</p>
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div>
+
+                      <div class="form-group required">
+                          <div class="form-group">
+                              <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Telefone</label>
+                              <div class="col-sm-9">
+                                  <input formControlName="telefone" ngModel maxlength="11" type="text" class="form-control" id="input-firstname" placeholder="Telefone" [(ngModel)]="usuario.telefone">
+                                  <div class="alert alert-primary hidden" id="erroTelefone" role="alert">
+                                      <p style="color: red;">* Preencha o campo telefone</p>
+                                  </div>
+
+                              </div>
+                          </div>
+
+
+                      </div>
+
+                      <div class="form-group required">
+                          <div class="form-group">
+                              <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Email</label>
+                              <div class="col-sm-9">
+                                  <input formControlName="email" name="email" ngModel email type="email" class="form-control" id="email" placeholder="email" [(ngModel)]="usuario.email" (keyup)="validateEmail()">
+                                  <div class="alert alert-primary hidden" id="erroEmail" role="alert">
+                                      <p style="color: red;">* Preencha o campo e-mail</p>
+                                  </div>
+                                  <div class="alert alert-primary hidden" id="erroEmailValid" role="alert">
+                                      <p style="color: red;">* Digite um e-mail válido</p>
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div>
+
+                      <div class="form-group required">
+                          <div class="form-group">
+                              <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Senha</label>
+                              <div class="col-sm-9">
+                                  <input formControlName="senha" type="password" class="form-control" id="senha" placeholder="senha" [(ngModel)]="senha" [(ngModel)]="usuario.senha" (keyup)="verificarSenha()">
+                                  <div class="alert alert-primary hidden" id="erroSenha" role="alert">
+                                      <p style="color: red;">* Preencha o campo senha</p>
+                                  </div>
+                                  <div class="alert alert-primary hidden" id="erroSenhaC" role="alert">
+                                      <p style="color: red;">* Senha fraca</p>
+                                  </div>
+                              </div>
+                          </div>
+
+                      </div>
+
+                      <div class="form-group required">
+                          <div class="form-group">
+                              <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Confirmar
+                senha</label>
+                              <div class="col-sm-9">
+                                  <input formControlName="confirmar" type="password" class="form-control" id="confirmarSenha" placeholder="confirmar senha" [(ngModel)]="confirmarSenha" [(ngModel)]="usuario.senhaConf">
+                                  <div class="alert alert-primary hidden" id="erroSenha2" role="alert">
+                                      <p style="color: red;">* As senhas devem ser iguais</p>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </fieldset>
+
+
+
+              <div class="buttons">
+                  <div class="pull-right">Você aceita os termos <a class="agree" href="#"><b>de privacidade</b></a>
+                      <input type="checkbox" value="1" name="agree">  
+                      <input type="submit" class="btn btn-success" class="btn btn-primary" value="Continuar" (click)="salvar()">
+                  </div>
+              </div>
+          </form>
+      </div>
+  </div>
 </div>

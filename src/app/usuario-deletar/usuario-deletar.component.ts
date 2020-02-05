@@ -13,7 +13,7 @@ export class UsuarioDeletarComponent implements OnInit {
   novo: boolean = false;
   valido: boolean = false;
 
-  usuario: Usuario = new Usuario(0,'','','','','');
+  usuario: Usuario = new Usuario(0,'','','','','',null,null);
   usuarios = []
 
   constructor(private usuarioService: UsuarioService,private route: ActivatedRoute, private router: Router) { }

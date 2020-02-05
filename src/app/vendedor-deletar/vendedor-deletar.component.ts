@@ -13,7 +13,7 @@ export class VendedorDeletarComponent implements OnInit {
   novo: boolean = false;
   valido: boolean = false;
 
-  vendedor: Vendedor = new Vendedor(0,'','','','','',null,null);
+  vendedor: Vendedor = new Vendedor(0,'','','','','',null,null,null);
   vendedoress = []
   constructor(private vendedorService: VendedorService,private route: ActivatedRoute, private router: Router) { }
 
