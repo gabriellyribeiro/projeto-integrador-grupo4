@@ -28,23 +28,25 @@ export class UsuarioDeletarComponent implements OnInit {
     } else {
       this.findById(id);
       this.novo = false;
+
+      
     }
   }
 
-  deletar(id : number){
-    if(this.novo){
-      this.usuarioService.delete(id).subscribe(() =>{
-        this.novo = false;
-        alert("usuario deletado!")
-      
-         
-      });
-    } 
+  btnSim(){
+    this.usuarioService.delete(this.usuario.idUsuario).subscribe((response:string)=>{
+      this.router.navigate(['usuario-listar']);
+    }, err => {
+      //console.log(err);
+      this.router.navigate(['usuario-listar']);
+    });
   }
+  
 
   findById(id: number){
     this.usuarioService.getById(id).subscribe((usuario: Usuario) =>{
      this.usuario = usuario; 
+     
     }, err => {
       console.log(`Erro cod: ${err.status}`);
     });
