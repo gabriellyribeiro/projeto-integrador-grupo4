@@ -15,9 +15,9 @@ import { Token } from '../model/token';
 })
 export class LoginComponent implements OnInit {
 
-  login: Usuario = new Usuario(0,'','','','','');
+  login: Usuario = new Usuario(0,'','','','','','',null);
   user: String;
-  usuario: Usuario = new Usuario(0,'','','','','');
+  usuario: Usuario = new Usuario(0,'','','','','','',null);
   
 
   constructor(private usuarioService: UsuarioService,private route: ActivatedRoute, private router:Router, private loginService: LoginService) { }
@@ -42,7 +42,20 @@ export class LoginComponent implements OnInit {
    
   }
 
+  redirect(){
+  
+    var comum = (<HTMLInputElement>document.getElementById("novaContaComum")).checked;
+    var vendedor = (<HTMLInputElement>document.getElementById("novaContaVendedor")).checked;
 
+    if(comum){
+      this.router.navigate(['registrar']);
+
+    }else if(vendedor){
+      this.router.navigate(['registrar-vendedor']);
+
+    }
+   
+  }
   
 
   logar(){

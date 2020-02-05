@@ -23,6 +23,15 @@ import { ProdutoComponent } from './produto/produto.component';
 import { ProdutoNovoComponent } from './produto-novo/produto-novo.component';
 import { PromocaoComponent } from './promocao/promocao.component';
 import { MaisvendidosComponent } from './maisvendidos/maisvendidos.component';
+import { CategoriaListarComponent } from './categoria-listar/categoria-listar.component';
+import { CategoriaNovoComponent } from './categoria-novo/categoria-novo.component';
+import { CategoriaDeleteComponent } from './categoria-delete/categoria-delete.component';
+import { ProdutoDeleteComponent } from './produto-delete/produto-delete.component';
+import { VendedorPageComponent } from './vendedor-page/vendedor-page.component';
+import { VendedorDeletarComponent } from './vendedor-deletar/vendedor-deletar.component';
+import { VendedorListarComponent } from './vendedor-listar/vendedor-listar.component';
+import { VendedorNovoComponent } from './vendedor-novo/vendedor-novo.component';
+import { RegistrarVendedorComponent } from './registrar-vendedor/registrar-vendedor.component';
 
 
 
@@ -47,7 +56,16 @@ import { MaisvendidosComponent } from './maisvendidos/maisvendidos.component';
     ProdutoComponent,
     ProdutoNovoComponent,
     PromocaoComponent,
-    MaisvendidosComponent
+    MaisvendidosComponent,
+    CategoriaListarComponent,
+    CategoriaNovoComponent,
+    CategoriaDeleteComponent,
+    ProdutoDeleteComponent,
+    VendedorPageComponent,
+    VendedorDeletarComponent,
+    VendedorListarComponent,
+    VendedorNovoComponent,
+    RegistrarVendedorComponent
     
   ],
   imports: [

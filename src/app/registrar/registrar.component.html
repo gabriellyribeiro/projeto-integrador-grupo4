@@ -14,10 +14,10 @@
         <div class="columnblock-title">Conta</div>
         <div class="category_block">
           <ul class="box-category">
-            <li><a href="login.html">Logar</a></li>
-            <li><a href="register.html">Registrar</a></li>
+            <li><a [routerLink]="['/logar']">Logar</a></li>
+            <li><a [routerLink]="['/logar']">Registrar</a></li>
             <li><a href="#">Esqueci minha senha</a></li>
-            <li><a href="#">Minha conta</a></li>
+            <li><a [routerLink]="['/user-page']">Minha conta</a></li>
             <li><a href="#">Lista de desejos</a></li>
             <li><a href="#">Mais...</a></li>
             <li><a [routerLink]="['/usuario-listar']">Listar usuários...</a></li>
@@ -107,6 +107,19 @@
                 <div class="col-sm-9">
                   <input formControlName="confirmar" type="password" class="form-control" id="confirmarSenha"
                     placeholder="confirmar senha" [(ngModel)]="confirmarSenha" [(ngModel)]="usuario.senhaConf">
+                  <div class="alert alert-primary hidden" id="erroSenha2" role="alert">
+                    <p style="color: red;">* As senhas devem ser iguais</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group required">
+              <div class="form-group">
+                <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Tipo</label>
+                <div class="col-sm-9">
+                  <input  type="text" class="form-control" id="confirmarSenha" [(ngModel)]="usuario.tipo" value="Comum" disabled>
+                 
+                  
                   <div class="alert alert-primary hidden" id="erroSenha2" role="alert">
                     <p style="color: red;">* As senhas devem ser iguais</p>
                   </div>

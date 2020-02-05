@@ -21,6 +21,7 @@
                         <li><a href="#">Lista de desejos</a></li>
                         <li><a href="#">Mais...</a></li>
                         <li><a [routerLink]="['/usuario-listar']">Listar usuários...</a></li>
+                        <li><a [routerLink]="['/vendedor-listar']">Listar vendedores...</a></li>
                     </ul>
                 </div>
             </div>
@@ -32,17 +33,17 @@
                     <p>Opções de conta:</p>
                     <div class="radio">
                         <label>
-              <input type="radio" name="account" value="register"
+              <input type="radio" name="account" id="novaContaComum" value="register"
                 checked="checked">
               Comum</label>
                     </div>
                     <div class="radio">
                         <label>
-              <input type="radio" name="account" value="guest">
+              <input type="radio" name="account" id="novaContaVendedor" value="guest">
               Vendedor</label>
                     </div>
                     <p>Ao criar a sua conta você poderá usufruir totalmente de nossa loja</p>
-                    <input type="button" value="Continue" id="button-account" data-loading-text="Loading..." class="btn btn-primary">
+                    <input type="button" value="Continue" id="button-account" data-loading-text="Loading..." class="btn btn-primary" (click)= redirect()>
                 </div>
                 <div class="col-sm-6">
                     <h2>Logar</h2>
@@ -64,6 +65,7 @@
                         <div class="alert alert-primary hidden" id="erro2" role="alert">
                             <p style="color: red;">* Preencha os campos para logar</p>
                         </div>
+                        
                         <div class="up" style="margin-top: 10px;">
                             Problemas para se logar? Você pode acessar: <a href="#" class="forgot">Esqueci minha senha</a> ou
                             <a [routerLink]="'/perguntas'">Dúvidas frequentes</a><br>

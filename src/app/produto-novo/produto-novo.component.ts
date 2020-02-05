@@ -14,7 +14,7 @@ export class ProdutoNovoComponent implements OnInit {
   novo: boolean = false;
   valido: boolean = false;
 
-  product: Product = new Product(0,'',0.0,'','');
+  product: Product = new Product(0,'',0.0,'',0,null,null,null);
 
   constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router) { }
 
@@ -61,7 +61,7 @@ export class ProdutoNovoComponent implements OnInit {
    
      
 
-    if(this.product.name == null || this.product.name == ""){
+    if(this.product.nome == null || this.product.nome == ""){
       nome.className = "alert alert-primary";
       this.valido = false;
     }else{
@@ -69,7 +69,7 @@ export class ProdutoNovoComponent implements OnInit {
       this.valido = true;
     }
       
-    if(this.product.price == null || this.product.price <= 0){
+    if(this.product.preco == null || this.product.preco <= 0){
       preco.className = "alert alert-primary";
       this.valido = false;
     }else{
@@ -78,7 +78,7 @@ export class ProdutoNovoComponent implements OnInit {
     }
       
     
-    if(this.product.description == null || this.product.description == ""){
+    if(this.product.qtd == null || this.product.qtd == 0){
       descricao.className = "alert alert-primary";
       this.valido = false;
     }else{
@@ -95,11 +95,13 @@ export class ProdutoNovoComponent implements OnInit {
       this.valido = true;
     }
      
-    if(this.product.name == null || this.product.name == "" || this.product.price == null || this.product.price <= 0 || this.product.description == null || this.product.description == "" || this.product.imgUrl == null || this.product.imgUrl == "" ){
+    if(this.product.nome == null || this.product.nome == "" || this.product.preco == null || this.product.preco <= 0 || this.product.qtd == null || this.product.qtd == 0 || this.product.imgUrl == null || this.product.imgUrl == "" ){
       this.valido = false;
    }
     
-
+    this.product.vendedor = null;
+    this.product.categoria = null;
+    this.product.compra = null;
 
 
 

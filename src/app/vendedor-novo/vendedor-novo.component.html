@@ -1,0 +1,102 @@
+<div class="breadcrumb parallax-container">
+    <div class="parallax"><img src="/assets/prlx.jpg" alt="#"></div>
+    <h1>Login</h1>
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Conta</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul>
+</div>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<div class="category col-2 left-col">
+<div class="container">
+  <div class="row">
+    <div class="content col-sm-12">
+      <div class="row">
+        <div class="col-sm-5">
+          <div class="thumbnails">
+            <div><a class="thumbnail fancybox" href="" title=""><img src="" title="Imagem do usuario" alt="Imagem do usuario" /></a></div>
+            
+          </div>
+        </div>
+
+       
+
+        <div class="col-sm-7 prodetail">
+          <br><br><br>
+          <div class="form-group">
+            <label for="input-address-2" class="col-sm-2 control-label">Nome:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="nomeUsuario" placeholder="Nome" value=""  [(ngModel)]="vendedor.nome">
+              <div class="alert alert-primary hidden" id="erroNome" role="alert">
+                <p style="color: red;">* Preencha o nome</p>
+            </div>
+            
+            </div>
+            <br><br><br>
+          </div>
+          <div class="form-group">
+            <label for="input-address-2" class="col-sm-2 control-label">Email:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="emailUsuario" placeholder="Email" value=""  [(ngModel)]="vendedor.email" (keyup) = "validateEmail()">
+              <div class="alert alert-primary hidden" id="erroEmail" role="alert">
+                <p style="color: red;">* Preencha o email</p>
+                <div class="alert alert-primary hidden" id="emailValidError" role="alert">
+                  <p style="color: red;">* Digite um email válido</p>
+                </div>
+            </div>
+            
+            </div>
+            <br><br><br>
+          </div>
+          <div class="form-group">
+            <label for="input-address-2" class="col-sm-2 control-label">Telefone:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="telefoneUsuario" placeholder="Telefone" value=""  [(ngModel)]="vendedor.telefone">
+              <div class="alert alert-primary hidden" id="erroTelefone" role="alert">
+                <p style="color: red;">* Preencha o telefone</p>
+            </div>
+            </div>
+            <br><br><br>
+          </div>
+          
+
+          <br><br><br>
+          <input type="submit" class="btn btn-primary" value="Salvar"  (click)="salvar()">
+         
+          <hr>
+
+          
+          <!-- <ul class="list-unstyled product_info">
+            <li>
+              <label>Brand:</label>
+              <span> <a href="#">Apple</a></span></li>
+            <li>
+              <label>Product Code:</label>
+              <span> product 20</span></li>
+            <li>
+              <label>Availability:</label>
+              <span> In Stock</span></li>
+          </ul> -->
+          
+          <div>
+
+
+
+
+
+
+
+
+
+
+
+

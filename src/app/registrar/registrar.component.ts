@@ -13,7 +13,7 @@ import { UsuarioService } from './../service/usuario.service';
 export class RegistrarComponent implements OnInit {
   novo: boolean = false;
   valido: boolean = false;
-  usuario: Usuario = new Usuario(0,'','','','','');
+  usuario: Usuario = new Usuario(0,'','','','','','',null);
 
   title = 'teste';
   angForm: FormGroup;
@@ -174,6 +174,7 @@ createForm() {
       if(this.novo && this.valido){
         this.usuarioService.insert(this.usuario).subscribe((usuario: Usuario) =>{
           this.usuario = usuario;
+          this.usuario.tipo = "Comum";
           this.novo = false;
           alert("Usuário "+ usuario.nome + " salvo com sucesso!")
           this.redirect()

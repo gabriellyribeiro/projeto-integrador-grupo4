@@ -19,7 +19,8 @@
             <li><a href="#">Phones & PDAs</a></li>
             <li><a href="#">Cameras</a></li>
             <li><a href="#">MP3 Players</a></li>
-            <li><a [routerLink]="['/produto-novo']">Produto novo.</a></li>
+            <li><a [routerLink]="['/produto-novo']">Adicionar produtos.</a></li>
+            <li><a [routerLink]="['/categoria-novo']">Novas categorias</a></li>
             <li><a [routerLink]="['/produto-single']">Produto single test.</a></li>
           </ul>
         </div>
@@ -147,19 +148,19 @@
         <div class="product-layout product-list col-xs-12"  >
           <div class="product-thumb">
             <div class="image product-imageblock">
-            <a [routerLink]="['/produto-single', product.id]">
+            <a [routerLink]="['/produto-single', product.idProduto]">
             <img src= "{{product.imgUrl}}" alt="produto" title="produto" class="img-responsive"  style="width: 250px; height:270px ;"/>
             <img src="{{product.imgUrl}}" alt="produto" title="produto" class="img-responsive" style="width: 250px; height:270px ;" />
             </a>
               <ul class="button-group grid-btn">
                 <li>
-                  <a [routerLink]="['/produto-single', product.id]"></a><button type="button" class="wishlist" data-toggle="tooltip" data-placement="top" title="Adicionar a lista de desejos" ><i class="fa fa-heart-o"></i></button>
+                  <a [routerLink]="['/produto-single', product.idProduto]"></a><button type="button" class="wishlist" data-toggle="tooltip" data-placement="top" title="Adicionar a lista de desejos" ><i class="fa fa-heart-o"></i></button>
                 </li>
                 <li>
                   <button type="button" class="compare" data-toggle="tooltip" data-placement="top" title="Comparar este produto" ><i class="fa fa-exchange"></i></button>
                 </li>
                 <li>
-                  <a [routerLink]="['/produto-novo', product.id]"><button type="button" class="quick-view" data-toggle="tooltip" data-placement="top" title="Alterar produto" ><i class="fa fa-pencil"></i></button></a>
+                  <a [routerLink]="['/produto-novo', product.idProduto]"><button type="button" class="quick-view" data-toggle="tooltip" data-placement="top" title="Alterar produto" ><i class="fa fa-pencil"></i></button></a>
                 </li>
                
                 <li>
@@ -169,21 +170,21 @@
             </div>
             <div class="caption product-detail">
               <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-              <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">{{product.name}}</a></h4>
-              <p class="price product-price">R$ {{product.price}}<span class="price-tax">Ex Tax: R$100.00</span></p>
-              <p class="product-desc">{{product.description}}</p>
+              <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">{{product.nome}}</a></h4>
+              <p class="price product-price">R$ {{product.preco}}<span class="price-tax">Ex Tax: R$100.00</span></p>
+              <p class="product-desc">{{product.qtd}}</p>
               <ul class="button-group list-btn">
                  
                     
                 <li>
-                  <a [routerLink]="['/produto-single', product.id]"></a><button type="button" class="wishlist" data-toggle="tooltip" data-placement="top" title="Adicionar a lista de desejos" ><i class="fa fa-heart-o"></i></button>
+                  <a [routerLink]="['/produto-single', product.idProduto]"></a><button type="button" class="wishlist" data-toggle="tooltip" data-placement="top" title="Adicionar a lista de desejos" ><i class="fa fa-heart-o"></i></button>
                 </li>
                 <li>
                   <button type="button" class="compare" data-toggle="tooltip" data-placement="top" title="Comparar este produto" ><i class="fa fa-exchange"></i></button>
                 </li>
                 
                 <li>
-                  <a [routerLink]="['/produto-novo', product.id]"><button type="button" class="quick-view" data-toggle="tooltip" data-placement="top" title="Alterar produto" ><i class="fa fa-pencil"></i></button></a>
+                  <a [routerLink]="['/produto-novo', product.idProduto]"><button type="button" class="quick-view" data-toggle="tooltip" data-placement="top" title="Alterar produto" ><i class="fa fa-pencil"></i></button></a>
                 </li>
                 
               </ul>

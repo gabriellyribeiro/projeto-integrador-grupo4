@@ -13,7 +13,7 @@ export class ProdutoSingleComponent implements OnInit {
   constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router) { }
 
   novo: boolean = false;
-  product: Product = new Product(0,'',0.0,'','');
+  product: Product = new Product(0,'',0.0,'',0,null,null,null);
 
   ngOnInit() {
 

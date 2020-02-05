@@ -1,0 +1,52 @@
+<div class="breadcrumb parallax-container">
+    <div class="parallax"><img src="/assets/prlx.jpg" alt="#"></div>
+    <h1>Categoria</h1>
+    <ul>
+        <li><a href="index.html">Categorias</a></li>
+        
+    </ul>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-3 hidden-xs column-left" id="column-left">
+            <div class="Categories left-sidebar-widget">
+                <div class="columnblock-title">Conta</div>
+                <div class="category_block">
+                    <ul class="box-category">
+                        <li><a [routerLink]="['/categoria-listar']">Listar categorias...</a></li>
+                        <li><a [routerLink]="['/categoria-novo']">Nova categoria...</a></li>
+
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-9" id="content">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <td class="text-center">Id</td>
+                            <td class="text-left">Nome</td>
+                           
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let categoria of categorias">
+                            <th scope="row">{{categoria.idCategoria}}</th>
+                            <td>{{categoria.nome}}</td>
+                            <td><a [routerLink]="['/categoria-novo', categoria.idCategoria]"><i class="fa fa-pencil"></i></a> </td>
+                            <td><a [routerLink]="['/categoria-deletar', categoria.idCategoria]"><i class="fa fa-eraser"></i></a> </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+</div>

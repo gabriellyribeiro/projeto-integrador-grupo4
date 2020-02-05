@@ -10,11 +10,11 @@
               </div>
             </div>
             <div class="col-sm-7 prodetail">
-              <h1 class="productpage-title">{{product.name}}</h1>
+              <h1 class="productpage-title">{{product.nome}}</h1>
               <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span><span class="riview"><a href="#">1 reviews</a> / <a href="#">Escreve sobre o produto</a></span> </div>
               <ul class="list-unstyled productinfo-details-top">
                 <li>
-                  <h2 class="productpage-price">{{product.price}}</h2>
+                  <h2 class="productpage-price">{{product.preco}}</h2>
                 </li>
                 
               </ul>
@@ -23,13 +23,13 @@
                 
                 <li>
                   <label>Codigo do produto:</label>
-                  <span> {{product.id}}</span></li>
+                  <span> {{product.idProduto}}</span></li>
                 <li>
                   <label>Disponivel:</label>
                   <span> Em estoque</span></li>
               </ul>
               <hr>
-              <p class="product-desc">{{product.description}}.</p>
+              <p class="product-desc">{{product.qtd}}.</p>
               <div id="product">
                 <div class="form-group">
                   <div class="row">
@@ -53,7 +53,9 @@
                         <button type="button" class="addtocart-btn" data-toggle="tooltip" data-placement="top" title="Aidiconar ao carrinho"  ><i class="fa fa-shopping-bag"></i></button>
                       </li>
                       <li>
-                        <button type="button" class="compare" data-toggle="tooltip" data-placement="top" title="Comparar esse produto" ><i class="fa fa-exchange"></i></button>
+                        <button type="button" class="compare" data-toggle="tooltip" data-placement="top" title="Comparar esse produto" ><a [routerLink]="['/produto-delete', product.idProduto]"><i class="fa fa-eraser"></i></a></button>
+                        
+                     
                       </li>
                      
                     </ul>
@@ -70,7 +72,7 @@
             <div class="tab-content">
               <div class="tab-pane active" id="tab-description">
                 <div class="cpt_product_description ">
-                  <div>{{product.description}}</div>
+                  <div>{{product.categoria.nome}}</div>
                 </div>
                 <!-- cpt_container_end --></div>
               <div class="tab-pane" id="tab-review">

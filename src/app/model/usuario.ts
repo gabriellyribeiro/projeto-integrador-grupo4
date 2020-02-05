@@ -1,3 +1,5 @@
+import { Compra } from './compra'
+
 export class Usuario{
 
 
@@ -8,6 +10,8 @@ export class Usuario{
         public email:string,
         public senha:string,
         public senhaConf: string,
+        public tipo: string,
+        public compras: Compra,
     ){}
 
     reset(){

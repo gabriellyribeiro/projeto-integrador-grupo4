@@ -79,7 +79,8 @@ export class ColecaoComponent implements OnInit {
   findAll(){
     this.productService.getAll().subscribe((productOut: Product[]) =>{
       this.products = productOut;
-      // console.log(this.products);
+     
+      //console.log(this.products);
     });
   }
 
