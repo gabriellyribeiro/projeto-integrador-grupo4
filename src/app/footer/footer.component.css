@@ -26,3 +26,20 @@ div.estilo {
     height: 5px;
     margin-top: 50px;
 }
+
+.estilo-logo {
+    font-family: Enigmatic Unicode;
+    font-size: 28px;
+    color: black;
+    margin-left: 28px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.estilo-logo2 {
+    font-family: Enigmatic Unicode;
+    font-size: 39px;
+    color: black;
+    text-align: center;
+    margin-bottom: 15px;
+}
