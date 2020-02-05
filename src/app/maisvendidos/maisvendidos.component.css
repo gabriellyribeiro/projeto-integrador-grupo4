@@ -1,5 +1,6 @@
-strong {
-    margin-top: 20px;
-    color: red;
-    text-align: center;
+.estilo-logo {
+    font-family: Enigmatic Unicode;
+    font-size: 20px;
+    color: black;
+    margin-top: 30px;
 }

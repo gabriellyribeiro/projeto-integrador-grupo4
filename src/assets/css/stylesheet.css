@@ -37,19 +37,19 @@ h1 {
     font-size: 18px;
     font-weight: 400;
     text-transform: uppercase;
-    font-family: Montserrat;
+    font-family: Enigmatic Unicode;
 }
 
 h2 {
     font-size: 16px;
     font-weight: 600;
-    font-family: Montserrat;
+    font-family: Enigmatic Unicode;
 }
 
 h3 {
     font-size: 15px;
     font-weight: 400;
-    font-family: Montserrat;
+    font-family: Enigmatic Unicode;
 }
 
 h4 {
@@ -2625,7 +2625,7 @@ button.btn.btn-default.btn-lg span {
 }
 
 .footer-top-cms h5 {
-    font-family: Montserrat;
+    font-family: Enigmatic Unicode;
     font-size: 26px;
     color: #000;
     line-height: 35px;
@@ -2812,7 +2812,7 @@ button.btn.btn-default.btn-lg span {
 
 #column-left .blog-name h2,
 #column-right .blog-name h2 {
-    font-family: Montserrat;
+    font-family: Enigmatic Unicode;
     font-size: 13px;
     color: #1b1b1b;
     text-transform: capitalize;
@@ -2922,7 +2922,7 @@ button.btn.btn-default.btn-lg span {
 .blog-content {
     margin: 10px 0 0;
     padding-bottom: 70px;
-    font-family: Montserrat;
+    font-family: Enigmatic Unicode;
 }
 
 .blog-name {
@@ -3566,7 +3566,7 @@ video {
 /*about page start*/
 
 .aboutus-title {
-    font-family: Montserrat;
+    font-family: Enigmatic Unicode;
     font-size: 26px;
     font-weight: 600;
     margin: 0 0 20px 25px;
