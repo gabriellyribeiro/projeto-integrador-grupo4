@@ -3,6 +3,7 @@ import { Globals } from '../model/globals';
 import { Usuario } from '../model/usuario';
 import { Router } from '@angular/router';
 import { LoginService } from '../service/login.service';
+import { Vendedor } from '../model/vendedor';
 
 @Component({
   selector: 'app-user-page',
@@ -13,6 +14,7 @@ import { LoginService } from '../service/login.service';
 export class UserPageComponent implements OnInit {
 
   usuario: Usuario;
+  vendedor: Vendedor;
   user: string;
   email: string;
   

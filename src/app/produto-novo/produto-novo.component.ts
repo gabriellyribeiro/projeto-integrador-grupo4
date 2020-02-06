@@ -116,6 +116,7 @@ export class ProdutoNovoComponent implements OnInit {
       if(this.valido){
       this.productService.update(this.product).subscribe((product: Product) =>{
         this.product = product;
+        this.product.categoria = null;
         console.log(product);
         alert("Alterado com sucesso");
         this.router.navigate(['colecao']);
