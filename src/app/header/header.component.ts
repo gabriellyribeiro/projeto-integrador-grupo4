@@ -1,3 +1,5 @@
+import { Product } from './../model/product';
+import { ProductService } from './../service/product.service';
 import { Component, OnInit, ElementRef, Inject } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Router } from '@angular/router';
@@ -13,7 +15,16 @@ export class HeaderComponent implements OnInit {
   user: String;
   username: string;
   log2: boolean;
-  constructor(private elementRef: ElementRef,@Inject(DOCUMENT) private doc,private router: Router, private loginService: LoginService) { }
+  name: string;
+
+  productLista: Product[];
+  produto: Product = new Product(0,'',0,'',0,null,null,null);
+  constructor(private elementRef: ElementRef,@Inject(DOCUMENT) private doc,private router: Router, private loginService: LoginService, private produtoService: ProductService) { }
+
+  
+  
+    
+
 
   ngOnInit() {
 
@@ -84,6 +95,17 @@ export class HeaderComponent implements OnInit {
 
   }
 
+  
+  buscarProduto(){
+    this.produtoService.getByName(this.name).subscribe((productsOut: Product)=>{
+      this.produto = productsOut;
+      console.log(this.produto);
+      var value = this.produto.idProduto;
+      this.router.navigate([`produto-single/${value}`]);
+     
+      
+    })
+  }
   
 
 }

@@ -28,7 +28,11 @@ export class ProductService {
   }
 
   delete(id: number){
-    return this.http.delete(`http://localhost:8080/produto/${id}`, );
+    return this.http.delete(`http://localhost:8080/produto/${id}`);
+  }
+
+  getByName(name:string){
+    return this.http.get(`http://localhost:8080/produto/nome/${name}`);
   }
 
 }

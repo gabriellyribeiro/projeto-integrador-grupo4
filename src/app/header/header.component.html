@@ -58,9 +58,9 @@
         </div>
         <div class="col-sm-9 col-xs-9 header-right">
             <div id="search" class="input-group">
-                <input type="text" name="search" value="" placeholder="Pesuisar por..." class="form-control input-lg" />
+                <input type="text" name="search" value="" [(ngModel)]="name" placeholder="Pesuisar por..." class="form-control input-lg" />
                 <span class="input-group-btn">
-                    <button type="button" class="btn btn-default btn-lg"><span>Procurar</span></button>
+                    <button type="button" class="btn btn-default btn-lg" (click)="buscarProduto()" ><span>Procurar</span></button>
                 </span>
             </div>
             <div id="cart" class="btn-group btn-block">

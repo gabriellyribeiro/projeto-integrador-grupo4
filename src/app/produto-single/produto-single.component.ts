@@ -23,8 +23,7 @@ export class ProdutoSingleComponent implements OnInit {
    
       this.findById(id);
       
-      
-     
+         
     
 
 
