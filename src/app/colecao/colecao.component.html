@@ -13,72 +13,14 @@
                 <h1>Top Categories</h1>
                 <div class="category_block">
                     <ul class="box-category treeview">
-                        <li><a [routerLink]="['/colecao']" class="">Produtos</a></li>
-                        <li><a href="#">Tablets</a></li>
-                        <li><a href="#">Software</a></li>
-                        <li><a href="#">Phones & PDAs</a></li>
-                        <li><a href="#">Cameras</a></li>
-                        <li><a href="#">MP3 Players</a></li>
-                        <li><a [routerLink]="['/produto-novo']">Produto novo.</a></li>
+                        <li><a [routerLink]="['/produto-novo']">Produto novo</a></li>
                         <li><a [routerLink]="['/categoria-listar']">Categorias</a></li>
-                      
                     </ul>
                 </div>
             </div>
-            <div class="filter left-sidebar-widget">
-                <h1>Filtros</h1>
-                <div class="filter-block">
-                    <div class="list-group">
-                        <p class="list-group-item">Cor</p>
-                        <div class="list-group-item">
-                            <div id="filter-group1">
-                                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="1" />
-                  Preto (7)</label>
-                                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="2" />
-                  Azul (6)</label>
-                                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="3" />
-                  Vermelho (6)</label>
-                            </div>
-                        </div>
-                        <p class="list-group-item">Preço</p>
-                        <div class="list-group-item">
-                            <div id="filter-group2">
-                                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="4" />
-                  RR$100-RR$300 (6)</label>
-                                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="5" />
-                  R$301-R$1000 (6)</label>
-                            </div>
-                        </div>
-                        <p class="list-group-item">Tamanho</p>
-                        <div class="list-group-item">
-                            <div id="filter-group3">
-                                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="6" />
-                  Grande (3)</label>
-                                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="7" />
-                  Médio (3)</label>
-                                <label class="checkbox">
-                  <input name="filter[]" type="checkbox" value="8" />
-                  Pequeno (1)</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel-footer">
-                        <button type="button" id="button-filter" class="btn btn-primary">Aplicar filtro</button>
-                    </div>
-                </div>
-            </div>
-            <div class="banner left-sidebar-widget">
-                <a href="#"><img src="/assets/banners/LeftBanner.jpg" alt="Left Banner" class="img-responsive" /></a>
-            </div>
+
             <div class="special left-sidebar-widget">
-                <h1>Produtos em destaque</h1>
+                <h1>Pode ser do seu interesse</h1>
                 <ul class="row ">
                     <li class="product-layout">
                         <div class="product-list col-xs-4">
@@ -93,34 +35,20 @@
                         </div>
                         <div class="col-xs-8">
                             <div class="caption product-detail">
-                                <h4 class="product-name"><a title="Casual " href="#">Casual </a></h4>
-                                <p class="price product-price"> <span class="price-new">R$254.00</span> <span class="price-old">R$272.00</span> </p>
+                                <h4 class="product-name"><a title="Casual " href="#">All in one </a></h4>
+                                <p class="price product-price"> <span class="price-new">R$2534.00</span> </p>
                                 <div class="addto-cart"><a href="#">Adicionar ao carrinho</a></div>
                             </div>
                         </div>
                     </li>
-
-
                 </ul>
             </div>
         </div>
         <div class=" content col-sm-9">
             <div class="category-page-wrapper">
                 <div class="col-md-2 text-right sort-wrapper">
-                    <label class="control-label" for="input-sort">Filtrar por :</label>
-                    <div class="sort-inner">
-                        <select id="input-sort" class="form-control">
-              <option value="ASC" selected="selected">Padrão</option>
-              <option value="ASC">Nome (A - Z)</option>
-              <option value="DESC">Nome (Z - A)</option>
-              <option value="ASC">Preço (Menor > Maior)</option>
-              <option value="DESC">Preço (Maior > Menor)</option>
-              <option value="DESC">Avaliação (Maior)</option>
-              <option value="ASC">Avaliação (Menor)</option>
-              <option value="ASC">Categoria (A - Z)</option>
-              <option value="DESC">Categoria (Z - A)</option>
-            </select>
-                    </div>
+                    <label class="control-label" for="input-sort">Produtos da nossa loja: </label>
+
                 </div>
                 <div class="col-md-1 text-right page-wrapper">
                     <label class="control-label" for="input-limit">Exibir :</label>
@@ -134,14 +62,14 @@
             </select>
                     </div>
                 </div>
-                <div class="col-md-6 list-grid-wrapper"> <a href="#" id="compare-total">Produtos comparados (0)</a>
+                <div class="col-md-6 list-grid-wrapper">
                     <div class="btn-group btn-list-grid">
                         <button type="button" id="list-view" class="btn btn-default list" data-toggle="tooltip" title="Lista"></button>
                         <button type="button" id="grid-view" class="btn btn-default grid" data-toggle="tooltip" title="Grade"></button>
                     </div>
                 </div>
             </div>
-            <br/>
+
 
 
             <div class="grid-list-wrapper" *ngFor="let product of products">
@@ -212,7 +140,7 @@
                     <ul class="pagination">
                         <li class="active"><span>1</span></li>
                         <li><a href="category.html">2</a></li>
-                        <li><a href="category.html">></a></li>
+                        <li><a href="category.html">3</a></li>
                         <li><a href="category.html">>|</a></li>
                     </ul>
                 </div>
