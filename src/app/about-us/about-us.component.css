@@ -19,19 +19,20 @@
     margin-bottom: 15px;
 }
 
-#linha{
-
+#linha {
     background-color: transparent;
     border-top: 1px solid #e91c57;
-    
 }
 
-.imgsobre{
+.imgsobre {
     width: 398px;
     height: 353px;
 }
 
-.desc{
-    margin-right: 32px;
-    
+.desc {
+    margin-right: 16px;
+}
+
+p {
+    font-size: 14px;
 }
