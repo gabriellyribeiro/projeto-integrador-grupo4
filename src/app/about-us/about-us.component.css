@@ -18,3 +18,20 @@
     text-align: center;
     margin-bottom: 15px;
 }
+
+#linha{
+
+    background-color: transparent;
+    border-top: 1px solid #e91c57;
+    
+}
+
+.imgsobre{
+    width: 398px;
+    height: 353px;
+}
+
+.desc{
+    margin-right: 32px;
+    
+}
