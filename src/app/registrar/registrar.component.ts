@@ -168,7 +168,7 @@ createForm() {
       
 
       this.verificar();
-     
+     this.usuario.tipo = "Comum";
 
 
       if(this.novo && this.valido){
@@ -177,7 +177,8 @@ createForm() {
           this.usuario.tipo = "Comum";
           this.novo = false;
           alert("Usuário "+ usuario.nome + " salvo com sucesso!")
-          this.redirect()
+          this.redirect();
+         
           
         });
       } else {

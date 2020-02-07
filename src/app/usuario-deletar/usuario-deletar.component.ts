@@ -10,6 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class UsuarioDeletarComponent implements OnInit {
   
+  
   novo: boolean = false;
   valido: boolean = false;
 

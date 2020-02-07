@@ -12,7 +12,7 @@
 
         
     <div class="container">
-      <div class="row">
+      <div  class="row">
         <div class="content col-sm-12">
           <div class="row">
             <div class="col-sm-5">
@@ -21,7 +21,7 @@
                 
               </div>
             </div>
-            <div class="col-sm-7 prodetail">
+            <div  class="col-sm-7 prodetail">
               <h1 class="productpage-title">{{user}}</h1>
               
               <ul class="list-unstyled productinfo-details-top">
@@ -43,9 +43,9 @@
 
           <button  class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove" (click)= "logout()"><i class="fa fa-times-circle"></i></button>
 
-          <form *ngIf='testeUser' enctype="multipart/form-data" method="post" action="#">
+          <form  enctype="multipart/form-data" method="post" action="#">
             <div class="table-responsive">
-              <table class="table table-bordered">
+              <table *ngIf="testeComum" class="table table-bordered">
                 <thead>
                   <tr>
                     <td class="text-center">Imagem</td>
@@ -72,6 +72,10 @@
                   </tr>
                 </tbody>
               </table>
+              <div >
+                <input type="button" value="Listar produtos" id="button-login" data-loading-text="Loading..." class="btn btn-primary" (click)="findAll()">
+              </div>
+              <div>{{products.nome}}</div>
             </div>
           </form>
         

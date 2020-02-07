@@ -3,6 +3,12 @@ import { DOCUMENT } from '@angular/common';
 
 import { ProductService } from '../service/product.service';
 import { Product } from '../model/product';
+import { findLast } from '@angular/compiler/src/directive_resolver';
+import { Router } from '@angular/router';
+import { Usuario } from '../model/usuario';
+import { Vendedor } from '../model/vendedor';
+import { LoginService } from '../service/login.service';
+import { Globals } from '../model/globals';
 
 @Component({
   selector: 'app-colecao',
@@ -11,16 +17,60 @@ import { Product } from '../model/product';
 })
 export class ColecaoComponent implements OnInit {
 
-  constructor(private elementRef: ElementRef,@Inject(DOCUMENT) private doc, private productService: ProductService) { }
+  constructor(private loginService: LoginService, private router: Router, private elementRef: ElementRef,@Inject(DOCUMENT) private doc, private productService: ProductService) { }
 
-
+  
+  usuario: Usuario ;
+  vendedor: Vendedor;
+  user: string;
+  email: string;
+  tipo: string;
+  testeAdmin: boolean = false;
+  testeComum: boolean = false;
+  testeVendedor: boolean = false;
   products: Product[];
 
 
   ngOnInit() {
     
 
+    
     this.findAll();
+
+
+
+    if (!localStorage.getItem("token")) {
+      //alert("Você não pode acessar está página sem estar logado")
+      this.router.navigate(['login']);
+  
+    }
+    else {
+    
+     // alert("Logado")
+      this.loginService.log.next(true); 
+      this.usuario = Globals.USUARIO;
+      this.vendedor = Globals.VENDEDOR;
+      this.user = localStorage.getItem("nome");
+      this.email = localStorage.getItem("usuarioEmail");
+      this.tipo = localStorage.getItem("tipo");
+  
+      if(this.tipo == "Administrador"){
+        this.testeAdmin = true;
+        this.testeComum = false;
+        this.testeVendedor = false;
+      }
+      if(this.tipo == "Comum"){
+        this.testeComum = true;
+        this.testeAdmin = false;
+        this.testeVendedor = false;
+      }
+      if(this.tipo == "Vendedor"){
+        this.testeVendedor = true;
+        this.testeAdmin = false;
+        this.testeComum = false;
+      }
+
+    }
 
 
     
@@ -70,20 +120,19 @@ export class ColecaoComponent implements OnInit {
     s10.src = "../assets/javascript/jquery.parallax.js";
     this.elementRef.nativeElement.appendChild(s10);
 
+ 
 
-    
-  }
-
-
-
-  findAll(){
-    this.productService.getAll().subscribe((productOut: Product[]) =>{
-      this.products = productOut;
-     
-      //console.log(this.products);
-    });
-  }
+  
 
 
 
+}
+
+findAll(){
+  this.productService.getAll().subscribe((productOut: Product[]) =>{
+    this.products = productOut;
+   
+    //console.log(this.products);
+  });
+}
 }

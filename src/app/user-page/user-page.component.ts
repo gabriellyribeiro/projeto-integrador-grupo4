@@ -4,6 +4,8 @@ import { Usuario } from '../model/usuario';
 import { Router } from '@angular/router';
 import { LoginService } from '../service/login.service';
 import { Vendedor } from '../model/vendedor';
+import { Product } from '../model/product';
+import { ProductService } from '../service/product.service';
 
 
 @Component({
@@ -20,9 +22,12 @@ export class UserPageComponent implements OnInit {
   user: string;
   email: string;
   tipo: string;
-  testeUser: boolean = false;
+  testeAdmin: boolean = false;
+  testeComum: boolean = false;
+  testeVendedor: boolean = false;
+  products: Product[];
   
-  constructor(private router: Router, private loginService: LoginService) { 
+  constructor(private productservice: ProductService, private router: Router, private loginService: LoginService, private productService: ProductService) { 
 
   }
 
@@ -51,7 +56,20 @@ export class UserPageComponent implements OnInit {
     this.tipo = localStorage.getItem("tipo");
 
     if(this.tipo == "Administrador"){
-      this.testeUser = true;
+      this.testeAdmin = true;
+      this.testeComum = false;
+      this.testeVendedor = false;
+    }
+    if(this.tipo == "Comum"){
+      this.testeComum = true;
+      this.testeAdmin = false;
+      this.testeVendedor = false;
+    }
+    if(this.tipo == "Vendedor"){
+      this.testeVendedor = true;
+      this.testeAdmin = false;
+      this.testeComum = false;
+    }
     }
     
     
@@ -61,7 +79,7 @@ export class UserPageComponent implements OnInit {
    // this.router.navigate(['user-page']);
   }
 
-      }
+      
     //  else{
         //console.log(this.usuario.nome);
    
@@ -78,5 +96,12 @@ export class UserPageComponent implements OnInit {
     this.router.navigate(['login']);
   }
   
+  findAll(){
+    this.productService.getAll().subscribe((productOut: Product[]) =>{
+      this.products = productOut;
+     
+      //console.log(this.products);
+    });
+  }
 
 }

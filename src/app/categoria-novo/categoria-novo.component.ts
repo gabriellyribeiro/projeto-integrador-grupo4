@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { CategoriaService } from '../service/categoria.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Categoria } from '../model/categoria';
+import { Usuario } from '../model/usuario';
+import { Vendedor } from '../model/vendedor';
+import { Product } from '../model/product';
 
 @Component({
   selector: 'app-categoria-novo',
@@ -9,6 +12,20 @@ import { Categoria } from '../model/categoria';
   styleUrls: ['./categoria-novo.component.css']
 })
 export class CategoriaNovoComponent implements OnInit {
+  usuario: Usuario;
+  vendedor: Vendedor;
+  
+  user: string;
+  email: string;
+  tipo: string;
+  testeAdmin: boolean = false;
+  testeComum: boolean = false;
+  testeVendedor: boolean = false;
+  products: Product[];
+  usuarios = []
+
+  vendedores = [];
+  categorias = []
 
   novo: boolean = false;
   valido: boolean = false;

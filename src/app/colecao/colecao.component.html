@@ -6,20 +6,21 @@
         <li><a href="category.html">Produtos</a></li>
     </ul>
 </div>
-<div class="container">
-    <div class="row">
-        <div id="column-left" class="col-sm-3 hidden-xs column-left">
+<div  class="container">
+    <div  class="row">
+        <div  id="column-left" class="col-sm-3 hidden-xs column-left">
             <div class="Categories left-sidebar-widget">
                 <h1>Top Categories</h1>
                 <div class="category_block">
                     <ul class="box-category treeview">
-                        <li><a [routerLink]="['/produto-novo']">Produto novo</a></li>
-                        <li><a [routerLink]="['/categoria-listar']">Categorias</a></li>
+                        <li *ngIf="testeAdmin"><a [routerLink]="['/produto-novo']">Produto novo</a></li>
+                        <li *ngIf="testeVendedor"><a [routerLink]="['/produto-novo']">Produto novo</a></li>
+                        <li *ngIf="testeAdmin"><a [routerLink]="['/categoria-listar']">Categorias</a></li>
                     </ul>
                 </div>
             </div>
 
-            <div class="special left-sidebar-widget">
+            <div  class="special left-sidebar-widget">
                 <h1>Pode ser do seu interesse</h1>
                 <ul class="row ">
                     <li class="product-layout">
@@ -72,12 +73,12 @@
 
 
 
-            <div class="grid-list-wrapper" *ngFor="let product of products">
+            <div class="grid-list-wrapper"   *ngFor="let product of products">
 
 
-                <div class="product-layout product-list col-xs-12">
+                <div class="product-layout product-list col-xs-12 " >
                     <div class="product-thumb">
-                        <div class="image product-imageblock">
+                        <div class="image product-imageblock" >
                             <a [routerLink]="['/produto-single', product.idProduto]">
                                 <img src="{{product.imgUrl}}" alt="produto" title="produto" class="img-responsive" style="width: 250px; height:270px ;" />
                                 <img src="{{product.imgUrl}}" alt="produto" title="produto" class="img-responsive" style="width: 250px; height:270px ;" />
@@ -148,3 +149,4 @@
         </div>
     </div>
 </div>
+

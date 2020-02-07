@@ -169,7 +169,7 @@ export class RegistrarVendedorComponent implements OnInit {
      this.vendedor.produto = null;
 
     this.verificar();
-  
+    this.vendedor.tipo = "Vendedor";
 
 
     if(this.novo && this.valido){
@@ -177,8 +177,9 @@ export class RegistrarVendedorComponent implements OnInit {
         this.vendedor = vendedor;
         this.vendedor.tipo = "Vendedor";
         this.novo = false;
-        alert("Usuário "+ vendedor.nome + " salvo com sucesso!")
-        this.redirect()
+        alert("Usuário "+ vendedor.nome + " salvo com sucesso!" + "Como: " + vendedor.tipo);
+        this.redirect();
+       
         
       });
     } else {
@@ -186,7 +187,7 @@ export class RegistrarVendedorComponent implements OnInit {
       if(this.valido){
       this.vendedorService.update(this.vendedor).subscribe((vendedor: Vendedor) =>{
         this.vendedor = vendedor;
-        alert("ERRO"+ vendedor.nome + " já existente!")
+        alert("ERRO"+ vendedor.nome + " já existente!");
       });
     }
     

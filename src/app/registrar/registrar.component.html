@@ -14,13 +14,8 @@
               <h1>Conta</h1>
               <div class="category_block">
                   <ul class="box-category">
-                      <li><a href="login.html">Logar</a></li>
-                      <li><a href="register.html">Registrar</a></li>
-                      <li><a href="#">Esqueci minha senha</a></li>
-                      <li><a href="#">Minha conta</a></li>
-                      <li><a href="#">Lista de desejos</a></li>
-                      <li><a href="#">Mais...</a></li>
-                      <li><a [routerLink]="['/usuario-listar']">Listar usuários...</a></li>
+                    <li><a [routerLink]="['/login']">Logar</a></li>
+                    <li><a [routerLink]="['/login']">Registrar</a></li>
 
                   </ul>
               </div>
@@ -110,27 +105,15 @@
                               </div>
                           </div>
                       </div>
-                      <div class="form-group required">
-                        <div class="form-group">
-                          <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Tipo</label>
-                          <div class="col-sm-9">
-                            <input  type="text" class="form-control" id="confirmarSenha" [(ngModel)]="usuario.tipo" value="Comum" disabled>
-                           
-                            
-                            <div class="alert alert-primary hidden" id="erroSenha2" role="alert">
-                              <p style="color: red;">* As senhas devem ser iguais</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                   
                   </form>
               </fieldset>
 
 
 
               <div class="buttons">
-                  <div class="pull-right">Você aceita os termos <a class="agree" href="#"><b>de privacidade</b></a>
-                      <input type="checkbox" value="1" name="agree">  
+                  <div class="pull-right">Ao clicar em continuar você aceita os termos <a class="agree" href="#"><b>de privacidade</b></a>
+                       
                       <input type="submit" class="btn btn-success" class="btn btn-primary" value="Continuar" (click)="salvar()">
                   </div>
               </div>
