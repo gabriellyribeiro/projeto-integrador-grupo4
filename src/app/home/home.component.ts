@@ -4,6 +4,7 @@ import { DOCUMENT } from '@angular/common';
 import { ProductService } from '../service/product.service';
 import { Product } from '../model/product';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',

@@ -2,13 +2,13 @@
     <div class="mainbanner">
         <div id="main-banner" class="owl-carousel home-slider">
             <div class="item">
-                <a href="#"><img src="/assets/banners/Main-Banner1.jpg" alt="Relógio digital Smartwatch." class="img-responsive" /></a>
+                <a [routerLink]="['/colecao']"><img src="/assets/banners/Main-Banner1.jpg" alt="Relógio digital Smartwatch." class="img-responsive" /></a>
             </div>
             <div class="item">
-                <a href="#"><img src="/assets/banners/Main-Banner2.jpg" alt="Imagem com diversos gadgets, entre eles, fone, camera, notebook." class="img-responsive" /></a>
+                <a [routerLink]="['/colecao']"><img src="/assets/banners/Main-Banner2.jpg" alt="Imagem com diversos gadgets, entre eles, fone, camera, notebook." class="img-responsive" /></a>
             </div>
             <div class="item">
-                <a href="#"><img src="/assets/banners/Main-Banner3.jpg" alt="Uma mesa com um iphone, um ipad, um mousePad e um mouse Apple, um de numeros" class="img-responsive" /></a>
+                <a [routerLink]="['/colecao']"><img src="/assets/banners/Main-Banner3.jpg" alt="Uma mesa com um iphone, um ipad, um mousePad e um mouse Apple, um de numeros" class="img-responsive" /></a>
             </div>
         </div>
     </div>
@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="banner sub-hover">
-                    <a href="#"><img src="/assets/banners/subbanner1.jpg" alt="Um notebook aberto e ligado com o plano de fundo de uma paisagem tropical" class="img-responsive"></a>
+                    <a [routerLink]="['/colecao']"><img src="/assets/banners/subbanner1.jpg" alt="Um notebook aberto e ligado com o plano de fundo de uma paisagem tropical" class="img-responsive"></a>
                     <div class="bannertext">
                         <h2>Laptops</h2>
                         <p>Confira</p>
@@ -27,7 +27,7 @@
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="banner sub-hover">
-                    <a href="#"><img src="/assets/banners/subbanner2.jpg" alt="Um Desktop ligado com o plano de fundo de uma paisagem tropical" class="img-responsive"></a>
+                    <a [routerLink]="['/colecao']"><img src="/assets/banners/subbanner2.jpg" alt="Um Desktop ligado com o plano de fundo de uma paisagem tropical" class="img-responsive"></a>
                     <div class="bannertext">
                         <h2>Desktops</h2>
                         <p>Confira</p>
@@ -37,7 +37,7 @@
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="banner sub-hover">
-                    <a href="#"><img src="/assets/banners/subbanner3.jpg" alt="Um teclado e um mouse branco" class="img-responsive"></a>
+                    <a [routerLink]="['/colecao']"><img src="/assets/banners/subbanner3.jpg" alt="Um teclado e um mouse branco" class="img-responsive"></a>
                     <div class="bannertext">
                         <h2>Periféricos</h2>
                         <p>Confira</p>
@@ -47,7 +47,7 @@
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
                 <div class="banner sub-hover">
-                    <a href="#"><img src="/assets/banners/subbanner4.jpg" alt="Um cabo de dados" class="img-responsive"></a>
+                    <a [routerLink]="['/colecao']"><img src="/assets/banners/subbanner4.jpg" alt="Um cabo de dados" class="img-responsive"></a>
                     <div class="bannertext">
                         <h2>Acessórios</h2>
                         <p>Confira</p>
@@ -90,9 +90,7 @@
                                         <li>
                                             <button type="button" class="compare" data-toggle="tooltip" data-placement="top" title="Comparar este produto"><i class="fa fa-exchange"></i></button>
                                         </li>
-                                        <li>
-                                            <a [routerLink]="['/produto-single', product.idProduto]"></a><button type="button" class="quick-view" data-toggle="tooltip" data-placement="top" title="Visualizar"><i class="fa fa-eye"></i></button>
-                                        </li>
+                                       
                                         <li>
                                             <button type="button" class="addtocart-btn" title="Adicionar ao carrinho"> Adicionar ao carrinho </button>
                                         </li>
@@ -100,7 +98,7 @@
                                 </div>
                                 <div class="caption product-detail">
                                     <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span>                                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span>                                        <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-                                    <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">{{product.nome}}</a></h4>
+                                    <h4 class="product-name"><a [routerLink]="['/colecao']" title="Casual Shirt With Ruffle Hem">{{product.nome}}</a></h4>
                                     <p class="price product-price">R$ {{product.preco}}<span class="price-tax">Ex Tax: $100.00</span></p>
                                 </div>
                             </div>
@@ -113,7 +111,7 @@
                             <div class="item">
                                 <div class="product-thumb">
                                     <div class="image product-imageblock">
-                                        <a href="product.html"> <img src="/assets/product/product10.jpg" alt="Mouse da Microsoft na cor Preta" title="Mouse Microsoft" class="img-responsive" /> <img src="/assets/product/product10-10.jpg" alt="Mouse da Microsoft na cor Preta"
+                                        <a [routerLink]="['/colecao']"> <img src="/assets/product/product10.jpg" alt="Mouse da Microsoft na cor Preta" title="Mouse Microsoft" class="img-responsive" /> <img src="/assets/product/product10-10.jpg" alt="Mouse da Microsoft na cor Preta"
                                                 title="Mouse da Microsoft" class="img-responsive" /> </a>
                                         <ul class="button-group">
                                             <li>
@@ -132,7 +130,7 @@
                                     </div>
                                     <div class="caption product-detail">
                                         <div class="rating"> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span>                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span> <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i><i class="fa fa-star fa-stack-2x"></i></span>                                            <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span> </div>
-                                        <h4 class="product-name"><a href="#" title="Casual Shirt With Ruffle Hem">Casual Shirt With Ruffle Hem</a></h4>
+                                        <h4 class="product-name"><a [routerLink]="['/colecao']" title="Casual Shirt With Ruffle Hem">Casual Shirt With Ruffle Hem</a></h4>
                                         <p class="price product-price">$122.00<span class="price-tax">Ex Tax: $100.00</span></p>
                                     </div>
                                 </div>
@@ -142,7 +140,7 @@
                             <div class="item">
                                 <div class="product-thumb">
                                     <div class="image product-imageblock">
-                                        <a href="product.html"> <img src="/assets/product/product9.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> <img src="/assets/product/product9-9.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive"
+                                        <a [routerLink]="['/colecao']"> <img src="/assets/product/product9.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> <img src="/assets/product/product9-9.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive"
                                             /> </a>
                                         <ul class="button-group">
                                             <li>
@@ -171,7 +169,7 @@
                             <div class="item">
                                 <div class="product-thumb">
                                     <div class="image product-imageblock">
-                                        <a href="product.html"> <img src="/assets/product/product8.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> <img src="/assets/product/product3-3.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive"
+                                        <a [routerLink]="['/colecao']"> <img src="/assets/product/product8.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> <img src="/assets/product/product3-3.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive"
                                             /> </a>
                                         <ul class="button-group">
                                             <li>
@@ -200,7 +198,7 @@
                             <div class="item">
                                 <div class="product-thumb">
                                     <div class="image product-imageblock">
-                                        <a href="product.html"> <img src="/assets/product/product7.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> <img src="/assets/product/product4-4.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive"
+                                        <a [routerLink]="['/colecao']"> <img src="/assets/product/product7.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> <img src="/assets/product/product4-4.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive"
                                             /> </a>
                                         <ul class="button-group">
                                             <li>
@@ -229,7 +227,7 @@
                             <div class="item">
                                 <div class="product-thumb">
                                     <div class="image product-imageblock">
-                                        <a href="product.html"> <img src="/assets/product/product6.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> <img src="/assets/product/product5-5.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive"
+                                        <a [routerLink]="['/colecao']"> <img src="/assets/product/product6.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> <img src="/assets/product/product5-5.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive"
                                             /> </a>
                                         <ul class="button-group">
                                             <li>
@@ -258,7 +256,7 @@
                             <div class="item">
                                 <div class="product-thumb">
                                     <div class="image product-imageblock">
-                                        <a href="product.html"> <img src="/assets/product/product5.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> <img src="/assets/product/product6-6.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive"
+                                        <a [routerLink]="['/colecao']" > <img src="/assets/product/product5.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive" /> <img src="/assets/product/product6-6.jpg" alt="iPod Classic" title="iPod Classic" class="img-responsive"
                                             /> </a>
                                         <ul class="button-group">
                                             <li>

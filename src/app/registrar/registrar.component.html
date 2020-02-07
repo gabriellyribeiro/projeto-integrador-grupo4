@@ -81,7 +81,7 @@
                           <div class="form-group">
                               <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Senha</label>
                               <div class="col-sm-9">
-                                  <input formControlName="senha" type="password" class="form-control" id="senha" placeholder="senha" [(ngModel)]="senha" [(ngModel)]="usuario.senha" (keyup)="verificarSenha()">
+                                  <input formControlName="senha" type="password" class="form-control" id="senha" placeholder="senha" [(ngModel)]="usuario.senha" (keyup)="verificarSenha()">
                                   <div class="alert alert-primary hidden" id="erroSenha" role="alert">
                                       <p style="color: red;">* Preencha o campo senha</p>
                                   </div>
@@ -98,7 +98,7 @@
                               <label for="input-firstname" class="col-sm-2 control-label" style="padding-left: 20px">Confirmar
                 senha</label>
                               <div class="col-sm-9">
-                                  <input formControlName="confirmar" type="password" class="form-control" id="confirmarSenha" placeholder="confirmar senha" [(ngModel)]="confirmarSenha" [(ngModel)]="usuario.senhaConf">
+                                  <input formControlName="confirmar" type="password" class="form-control" id="confirmarSenha" placeholder="confirmar senha"  [(ngModel)]="usuario.senhaConf">
                                   <div class="alert alert-primary hidden" id="erroSenha2" role="alert">
                                       <p style="color: red;">* As senhas devem ser iguais</p>
                                   </div>

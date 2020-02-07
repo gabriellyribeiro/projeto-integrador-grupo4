@@ -101,7 +101,7 @@ export class LoginComponent implements OnInit {
         this.loginService.log.next(true);
         //this.router.navigate(['user-page']);
         console.log(this.usuario);
-        alert(res.token);
+        //alert(res.token);
       }, err => {
         // console.log(`Erro cod: ${err.status}`);
         // alert(`Email: ${this.usuario.email} , não encontrado :${err.status}`);
@@ -158,8 +158,8 @@ export class LoginComponent implements OnInit {
       
 
       localStorage.setItem("tipo", tipo);
-      alert("Usuario existente");
-      alert(this.usuario.tipo);
+      //alert("Usuario existente");
+      //alert(this.usuario.tipo);
       Globals.USUARIO = usuario;
       //this.loginService.log.next(false);
       // this.router.navigate(['user-page']);
@@ -183,8 +183,8 @@ export class LoginComponent implements OnInit {
         var tipo = this.vendedor.tipo;
         localStorage.setItem("tipo", tipo);
 
-        alert("Usuario existente");
-        alert(this.vendedor.tipo);
+        //alert("Usuario existente");
+        //alert(this.vendedor.tipo);
         //Globals.USUARIO = usuario;
       }, err => {
         console.log(`Erro cod: ${err.status}`);
