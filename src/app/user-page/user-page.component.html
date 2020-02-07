@@ -34,14 +34,16 @@
               <ul class="list-unstyled product_info">
                 
                 <li>
-                  <label>Telefone:</label>
-                  <span> {{usuario?.telefone}}</span></li>
+                  <label>Tipo:</label>
+                  <span> {{tipo}}</span></li>
                 </ul>
               <hr>
             </div>
           </div>
 
-          <form enctype="multipart/form-data" method="post" action="#">
+          <button  class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove" (click)= "logout()"><i class="fa fa-times-circle"></i></button>
+
+          <form *ngIf='testeUser' enctype="multipart/form-data" method="post" action="#">
             <div class="table-responsive">
               <table class="table table-bordered">
                 <thead>

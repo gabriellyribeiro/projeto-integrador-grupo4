@@ -1,5 +1,6 @@
 import { Compra } from './compra';
 import { Product } from './product';
+import { ComprasVendedor } from './comprasVendedor';
 
 
 export class Vendedor{
@@ -12,7 +13,7 @@ export class Vendedor{
         public senha: string,
         public senhaConf: string,
         public tipo: string,
-        public compra: Compra,
+        public compra: ComprasVendedor,
         public produto: Product
     ){}
 }

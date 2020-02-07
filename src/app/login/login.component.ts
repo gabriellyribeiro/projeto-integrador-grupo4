@@ -23,8 +23,7 @@ export class LoginComponent implements OnInit {
 
   loginVendedor: Vendedor = new Vendedor(0, '', '', '', '', '', '', null, null);
 
-  vendedor: Vendedor = new Vendedor(0, '', '', '', '', '', '', null, null);
-
+  vendedor: Vendedor = new Vendedor(0, "", "", "", "", "", "", null, null);
 
   constructor(private usuarioService: UsuarioService, private vendedorService: VendedorService, private route: ActivatedRoute, private router: Router, private loginService: LoginService) { }
 
@@ -64,6 +63,8 @@ export class LoginComponent implements OnInit {
   }
 
 
+
+
   logar() {
 
     localStorage.clear();
@@ -96,18 +97,29 @@ export class LoginComponent implements OnInit {
         localStorage.setItem("token", res.token);
         localStorage.setItem("nome", res.nome);
         localStorage.setItem("email", res.email);
+        localStorage.setItem("tipo", this.usuario.tipo);
         this.loginService.log.next(true);
         //this.router.navigate(['user-page']);
+        console.log(this.usuario);
         alert(res.token);
       }, err => {
         // console.log(`Erro cod: ${err.status}`);
         // alert(`Email: ${this.usuario.email} , não encontrado :${err.status}`);
         //this.router.navigate(['login']);
+        this.vendedor.idVendedor = this.usuario.idUsuario;
+        this.vendedor.nome = this.usuario.nome;
+        this.vendedor.senha = this.usuario.senha;
+        this.vendedor.email = this.usuario.email;
+        this.vendedor.tipo = "Vendedor";
+        
+
+
         this.loginService.loginVendedor(this.vendedor).subscribe((res: Token) => {
           localStorage.setItem("token", res.token);
           localStorage.setItem("nome", res.nome);
           localStorage.setItem("email", res.email);
           this.loginService.log.next(true);
+         
           //this.router.navigate(['user-page']);
           alert(res.token);
         }, err => {
@@ -128,22 +140,51 @@ export class LoginComponent implements OnInit {
     }
   }
 
+
   buscarUsuario() {
     this.usuarioService.verificar(this.usuario).subscribe((usuario: Usuario) => {
       //this.usuario = await usuario;
+      if(this.usuario.senha == "adm@" && this.usuario.email == "admin@admin"){
+        this.usuario.tipo = "Administrador";
+        var tipo = this.usuario.tipo;
+      }else{
+        this.usuario.tipo = "Comum";
+        var tipo = this.usuario.tipo;
+      }
+
       localStorage.setItem("usuario.nome", usuario.nome);
       localStorage.setItem("usuarioEmail", usuario.email);
       localStorage.setItem("usuario.telefone", usuario.telefone);
+      
+
+      localStorage.setItem("tipo", tipo);
       alert("Usuario existente");
+      alert(this.usuario.tipo);
       Globals.USUARIO = usuario;
       //this.loginService.log.next(false);
       // this.router.navigate(['user-page']);
+      
     }, err => {
+
+
+      this.vendedor.idVendedor = this.usuario.idUsuario;
+      this.vendedor.nome = this.usuario.nome;
+      this.vendedor.senha = this.usuario.senha;
+      this.vendedor.email = this.usuario.email;
+      this.vendedor.tipo = "Vendedor";
+      Globals.VENDEDOR = this.vendedor;
+     
+
       this.vendedorService.verificar(this.vendedor).subscribe((vendedor: Vendedor) => {
         localStorage.setItem("usuario.nome", vendedor.nome);
         localStorage.setItem("usuarioEmail", vendedor.email);
         localStorage.setItem("usuario.telefone", vendedor.telefone);
+        this.vendedor.tipo = "Vendedor";
+        var tipo = this.vendedor.tipo;
+        localStorage.setItem("tipo", tipo);
+
         alert("Usuario existente");
+        alert(this.vendedor.tipo);
         //Globals.USUARIO = usuario;
       }, err => {
         console.log(`Erro cod: ${err.status}`);

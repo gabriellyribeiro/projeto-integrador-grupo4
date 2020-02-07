@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { LoginService } from '../service/login.service';
 import { Vendedor } from '../model/vendedor';
 
+
 @Component({
   selector: 'app-user-page',
   templateUrl: './user-page.component.html',
@@ -15,8 +16,11 @@ export class UserPageComponent implements OnInit {
 
   usuario: Usuario;
   vendedor: Vendedor;
+  
   user: string;
   email: string;
+  tipo: string;
+  testeUser: boolean = false;
   
   constructor(private router: Router, private loginService: LoginService) { 
 
@@ -37,12 +41,23 @@ export class UserPageComponent implements OnInit {
 
   }
   else {
-    this.user = localStorage.getItem("nome");
+  
    // alert("Logado")
     this.loginService.log.next(true); 
-    //this.usuario = Globals.USUARIO;
+    this.usuario = Globals.USUARIO;
+    this.vendedor = Globals.VENDEDOR;
     this.user = localStorage.getItem("nome");
     this.email = localStorage.getItem("usuarioEmail");
+    this.tipo = localStorage.getItem("tipo");
+
+    if(this.tipo == "Administrador"){
+      this.testeUser = true;
+    }
+    
+    
+
+
+
    // this.router.navigate(['user-page']);
   }
 
