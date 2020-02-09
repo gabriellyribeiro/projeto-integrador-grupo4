@@ -5,6 +5,8 @@ import { Categoria } from '../model/categoria';
 import { Usuario } from '../model/usuario';
 import { Vendedor } from '../model/vendedor';
 import { Product } from '../model/product';
+import { Globals } from '../model/globals';
+import { LoginService } from '../service/login.service';
 
 @Component({
   selector: 'app-categoria-novo',
@@ -25,12 +27,12 @@ export class CategoriaNovoComponent implements OnInit {
   usuarios = []
 
   vendedores = [];
-  categorias = []
+  categorias = [];
 
   novo: boolean = false;
   valido: boolean = false;
   categoria: Categoria = new  Categoria(0,"");
-  constructor(private route: ActivatedRoute, private categoriaService: CategoriaService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private categoriaService: CategoriaService, private router: Router, private loginService: LoginService) { }
 
   ngOnInit() {
 
@@ -39,7 +41,38 @@ export class CategoriaNovoComponent implements OnInit {
 
     console.log(id);
 
-   
+    if (!localStorage.getItem("token") || localStorage.getItem("tipo") != "Administrador") {
+      //alert("Você não pode acessar está página sem estar logado")
+      this.router.navigate(['login']);
+  
+    }
+    else {
+    
+     // alert("Logado")
+      this.loginService.log.next(true); 
+      this.usuario = Globals.USUARIO;
+      this.vendedor = Globals.VENDEDOR;
+      this.user = localStorage.getItem("nome");
+      this.email = localStorage.getItem("usuarioEmail");
+      this.tipo = localStorage.getItem("tipo");
+  
+      if(this.tipo == "Administrador"){
+        this.testeAdmin = true;
+        this.testeComum = false;
+        this.testeVendedor = false;
+      }
+      if(this.tipo == "Comum"){
+        this.testeComum = true;
+        this.testeAdmin = false;
+        this.testeVendedor = false;
+      }
+      if(this.tipo == "Vendedor"){
+        this.testeVendedor = true;
+        this.testeAdmin = false;
+        this.testeComum = false;
+      }
+      }
+
 
     if(id == undefined){
       this.novo = true;

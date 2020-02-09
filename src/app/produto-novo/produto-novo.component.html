@@ -67,6 +67,15 @@
               </div>
               <br><br><br>
             </div>
+            <div class="form-group">
+
+              <div class="Sort-by col-md-10">
+
+                <select id = "categoria.produto" class="selectpicker form-control" (click)="buscarCategoria()" [(ngModel)]="product.categoria">
+                  <option *ngFor="let categoria of categorias" value="{{categoria.nome}}"  >{{categoria.nome}}</option>  
+                </select>
+              </div>
+            </div>
 
             <br><br><br>
             <input type="submit" class="btn btn-primary" value="Salvar" (click)="salvarProd()">

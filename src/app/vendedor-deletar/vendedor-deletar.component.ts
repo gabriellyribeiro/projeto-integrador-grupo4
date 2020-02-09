@@ -50,7 +50,7 @@ export class VendedorDeletarComponent implements OnInit {
       
     }
 
-    if (!localStorage.getItem("token")|| this.tipo != "Administrador") {
+    if (!localStorage.getItem("token")|| localStorage.getItem("tipo") != "Administrador") {
       //alert("Você não pode acessar está página sem estar logado")
       this.router.navigate(['login']);
   

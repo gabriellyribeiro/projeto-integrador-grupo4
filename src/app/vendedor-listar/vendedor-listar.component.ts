@@ -37,7 +37,7 @@ export class VendedorListarComponent implements OnInit {
     this.getAll();
     this.findAll();
 
-    if (!localStorage.getItem("token") || this.tipo != "Administrador") {
+    if (!localStorage.getItem("token") || localStorage.getItem("tipo") != "Administrador") {
       //alert("Você não pode acessar está página sem estar logado")
       this.router.navigate(['login']);
   

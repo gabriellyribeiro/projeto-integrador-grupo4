@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from '../model/product';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from '../service/product.service';
+import { CategoriaService } from '../service/categoria.service';
+import { Categoria } from '../model/categoria';
+import { Globals } from '../model/globals';
+import { LoginService } from '../service/login.service';
+import { Usuario } from '../model/usuario';
+import { Vendedor } from '../model/vendedor';
 
 @Component({
   selector: 'app-produto-novo',
@@ -10,13 +16,24 @@ import { ProductService } from '../service/product.service';
 })
 export class ProdutoNovoComponent implements OnInit {
 
+  user: string;
+  email: string;
+  tipo: string;
+  testeAdmin: boolean = false;
+  testeComum: boolean = false;
+  testeVendedor: boolean = false;
+
+  usuario: Usuario;
+  vendedor: Vendedor;
 
   novo: boolean = false;
   valido: boolean = false;
+  categorias = [];
+  categoria: Categoria = new Categoria(0,'');
 
   product: Product = new Product(0,'',0.0,'',0,null,null,null);
 
-  constructor(private route: ActivatedRoute, private productService: ProductService, private router: Router) { }
+  constructor(private loginService: LoginService ,private route: ActivatedRoute, private productService: ProductService, private router: Router, private categoriaService: CategoriaService) { }
 
   ngOnInit() {
 
@@ -26,7 +43,37 @@ export class ProdutoNovoComponent implements OnInit {
 
     console.log(id);
 
-   
+    if (!localStorage.getItem("token") || localStorage.getItem("tipo") != "Administrador") {
+      //alert("Você não pode acessar está página sem estar logado")
+      this.router.navigate(['login']);
+  
+    }
+    else {
+    
+     // alert("Logado")
+      this.loginService.log.next(true); 
+      this.usuario = Globals.USUARIO;
+      this.vendedor = Globals.VENDEDOR;
+      this.user = localStorage.getItem("nome");
+      this.email = localStorage.getItem("usuarioEmail");
+      this.tipo = localStorage.getItem("tipo");
+  
+      if(this.tipo == "Administrador"){
+        this.testeAdmin = true;
+        this.testeComum = false;
+        this.testeVendedor = false;
+      }
+      if(this.tipo == "Comum"){
+        this.testeComum = true;
+        this.testeAdmin = false;
+        this.testeVendedor = false;
+      }
+      if(this.tipo == "Vendedor"){
+        this.testeVendedor = true;
+        this.testeAdmin = false;
+        this.testeComum = false;
+      }
+      }
 
     if(id == undefined){
       this.novo = true;
@@ -39,6 +86,32 @@ export class ProdutoNovoComponent implements OnInit {
 
 
 
+  }
+  
+  findAllCategoria() {
+    this.categoriaService.getAll().subscribe((categoriaOut: Categoria[]) => {
+      this.categorias = categoriaOut;
+
+      console.log(this.categorias);
+    });
+  }
+
+   findCategoriaByNome(nome: string) {
+    this.categoriaService.getByNome(nome).subscribe( (categoriaOut: Categoria) => {
+      this.categoria =  categoriaOut;
+      console.log(this.categoria);
+    });
+
+  }
+
+  buscarCategoria(){
+    var categoria = (<HTMLSelectElement>document.getElementById("categoria.produto"));
+    var categoriaNome = categoria.options[categoria.selectedIndex].value;
+
+
+    this.findCategoriaByNome(categoriaNome);
+    
+    
   }
 
 
@@ -117,6 +190,8 @@ export class ProdutoNovoComponent implements OnInit {
       this.productService.update(this.product).subscribe((product: Product) =>{
         this.product = product;
         this.product.categoria = null;
+        this.product.compra = null;
+        this.product.vendedor = null; 
         console.log(product);
         alert("Alterado com sucesso");
         this.router.navigate(['colecao']);
