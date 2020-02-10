@@ -28,8 +28,8 @@
                             <div class="product-thumb">
                                 <div class="image product-imageblock">
                                     <a href="product.html">
-                                        <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/assets/product/Pro-06.jpg">
-                                        <img class="img-responsive" title="iPod Classic" alt="iPod Classic" src="/assets/product/Pro-06-1.jpg">
+                                        <img class="img-responsive" title="c" alt="c" src="">
+                                        <img class="img-responsive" title="" alt="" src="">
                                     </a>
                                 </div>
                             </div>
@@ -91,7 +91,7 @@
                                     <button type="button" class="compare" data-toggle="tooltip" data-placement="top" title="Comparar este produto"><i class="fa fa-exchange"></i></button>
                                 </li>
                                 <li>
-                                    <a [routerLink]="['/produto-novo', product.idProduto]"><button type="button" class="quick-view" data-toggle="tooltip" data-placement="top" title="Alterar produto" ><i class="fa fa-pencil"></i></button></a>
+                                    <a *ngIf="testeAdmin" [routerLink]="['/produto-novo', product.idProduto]"><button  type="button" class="quick-view" data-toggle="tooltip" data-placement="top" title="Alterar produto" ><i class="fa fa-pencil"></i></button></a>
                                 </li>
 
                                 <li>

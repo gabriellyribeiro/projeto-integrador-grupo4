@@ -75,7 +75,7 @@
                 <label class="input-group-text" for="inputGroupSelect01"></label>
               </div>
               
-              <select class="custom-select" id="categoria.produto" (focus) ="buscarCategoria()" >
+              <select class="custom-select" id="categoria.produto" (change) ="buscarCategoria()" >
                 <option *ngFor="let categoria of categorias" value="{{categoria.nome}}"  >{{categoria.nome}}</option>
               </select>
             </div>

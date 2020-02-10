@@ -48,7 +48,7 @@
                         <button type="button" class="addtocart-btn" data-toggle="tooltip" data-placement="top" title="Aidiconar ao carrinho"  ><i class="fa fa-shopping-bag"></i></button>
                       </li>
                       <li>
-                        <button type="button" class="compare" data-toggle="tooltip" data-placement="top" title="Comparar esse produto" ><a [routerLink]="['/produto-delete', product.idProduto]"><i class="fa fa-eraser"></i></a></button>
+                        <button *ngIf="testeAdmin" type="button" class="compare" data-toggle="tooltip" data-placement="top" title="Comparar esse produto" ><a [routerLink]="['/produto-delete', product.idProduto]"><i class="fa fa-eraser"></i></a></button>
                         
                      
                       </li>

@@ -33,9 +33,9 @@ export class CategoriaListarComponent implements OnInit {
   ngOnInit() {
     this.findAll();
    
-    if (!localStorage.getItem("token")|| this.tipo != "Administrador") {
+    if (!localStorage.getItem("token") || localStorage.getItem("tipo") != "Administrador") {
       //alert("Você não pode acessar está página sem estar logado")
-     // this.router.navigate(['login']);
+      this.router.navigate(['login']);
   
     }
     else {

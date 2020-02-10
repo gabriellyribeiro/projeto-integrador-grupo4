@@ -65,7 +65,7 @@
                         <input type="text" class="form-control quantity" size="1" value="1" name="quantity">
                         <span class="input-group-btn">
                         <button class="btn btn-primary" title="" data-toggle="tooltip" type="submit" data-original-title="Update"><i class="fa fa-refresh"></i></button>
-                        <button  class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove" (click)= "logout()"><i class="fa fa-times-circle"></i></button>
+                        <button  class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove" (click)= "logout()"><i ></i></button>
                         </span></div></td>
                     <td class="text-right">R$254.00</td>
                     
@@ -73,7 +73,13 @@
                 </tbody>
               </table>
               <div >
-                <input type="button" value="Listar produtos" id="button-login" data-loading-text="Loading..." class="btn btn-primary" (click)="findAll()">
+                <a [routerLink]="['/usuario-listar']">Listar usuarios</a>
+                </div>
+              <div >
+                <a [routerLink]="['/vendedor-listar']">Listar vendedores</a>
+              </div>
+              <div >
+                <a [routerLink]="['/categoria-listar']">Listar categorias</a>
               </div>
               
             </div>

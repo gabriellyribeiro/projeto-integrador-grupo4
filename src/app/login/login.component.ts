@@ -121,7 +121,7 @@ export class LoginComponent implements OnInit {
           this.loginService.log.next(true);
          
           //this.router.navigate(['user-page']);
-          alert(res.token);
+          //alert(res.token);
         }, err => {
           console.log(`Erro cod: ${err.status}`);
 
@@ -225,7 +225,7 @@ export class LoginComponent implements OnInit {
       this.usuarioService.verificar(this.usuario).subscribe((usuario: Usuario) => {
         this.usuario = usuario;
 
-        alert("Usuario existente");
+        //alert("Usuario existente");
         Globals.USUARIO = usuario;
         this.router.navigate(['user-page']);
       }, err => {
