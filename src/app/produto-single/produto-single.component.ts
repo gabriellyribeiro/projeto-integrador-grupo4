@@ -32,6 +32,7 @@ export class ProdutoSingleComponent implements OnInit {
   async findById(id: number){
     this.productService.getById(id).subscribe(async (resProduct: Product) =>{
      this.product = await resProduct; 
+     console.log(this.product);
     }, err => {
       console.log(`Erro cod: ${err.status}`);
     });

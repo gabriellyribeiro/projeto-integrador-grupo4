@@ -144,6 +144,9 @@ input[type="color"].form-control {
 .input-group .dropdown-menu,
 .input-group .popover {
     border: none;
+    width: 200px;
+    height: 50px;
+    font-size: 15px;
 }
 
 .input-group .input-group-addon {

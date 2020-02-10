@@ -32,6 +32,7 @@ import { VendedorDeletarComponent } from './vendedor-deletar/vendedor-deletar.co
 import { VendedorListarComponent } from './vendedor-listar/vendedor-listar.component';
 import { VendedorNovoComponent } from './vendedor-novo/vendedor-novo.component';
 import { RegistrarVendedorComponent } from './registrar-vendedor/registrar-vendedor.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -73,7 +74,8 @@ import { RegistrarVendedorComponent } from './registrar-vendedor/registrar-vende
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
     
   ],
   providers: [],

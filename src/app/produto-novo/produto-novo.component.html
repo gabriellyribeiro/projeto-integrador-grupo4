@@ -63,15 +63,29 @@
                 <div class="alert alert-primary hidden" id="erroUrl" role="alert">
                   <p style="color: red;">* Preencha a url</p>
                 </div>
-
               </div>
-              <br><br><br>
             </div>
-
             <br><br><br>
-            <input type="submit" class="btn btn-primary" value="Salvar" (click)="salvarProd()">
+          
+          <div class="form-group">
+            
+            <div class="input-group md-10">
+              <div class="input-group-prepend">
+               
+                <label class="input-group-text" for="inputGroupSelect01"></label>
+              </div>
+              
+              <select class="custom-select" id="categoria.produto" (focus) ="buscarCategoria()" >
+                <option *ngFor="let categoria of categorias" value="{{categoria.nome}}"  >{{categoria.nome}}</option>
+              </select>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Salvar" (click)="salvarProd()" >
 
-            <hr>
+          </div>
+        </div>
+
+
+
 
 
             <!-- <ul class="list-unstyled product_info">
