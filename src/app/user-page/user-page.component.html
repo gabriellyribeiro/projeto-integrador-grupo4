@@ -73,13 +73,13 @@
                 </tbody>
               </table>
               <div >
-                <a [routerLink]="['/usuario-listar']">Listar usuarios</a>
+                <a *ngIf="testeAdmin" [routerLink]="['/usuario-listar']">Listar usuarios</a>
                 </div>
               <div >
-                <a [routerLink]="['/vendedor-listar']">Listar vendedores</a>
+                <a *ngIf="testeAdmin" [routerLink]="['/vendedor-listar']">Listar vendedores</a>
               </div>
               <div >
-                <a [routerLink]="['/categoria-listar']">Listar categorias</a>
+                <a *ngIf="testeAdmin" [routerLink]="['/categoria-listar']">Listar categorias</a>
               </div>
               
             </div>
