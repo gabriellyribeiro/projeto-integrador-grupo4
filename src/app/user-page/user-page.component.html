@@ -44,7 +44,7 @@
 
           <form  enctype="multipart/form-data" method="post" action="#">
             <div class="table-responsive">
-              <table *ngIf="testeComum" class="table table-bordered">
+              <table *ngIf="testeVendedor" class="table table-bordered">
                 <thead>
                   <tr>
                     <td class="text-center">Imagem</td>
@@ -77,15 +77,15 @@
               <div >
                 <a *ngIf="testeAdmin" [routerLink]="['/usuario-listar']">Listar usuarios</a>
                 </div>
-                <hr>
+                <hr *ngIf="testeAdmin">
               <div >
                 <a *ngIf="testeAdmin" [routerLink]="['/vendedor-listar']">Listar vendedores</a>
               </div>
-              <hr>
+              <hr *ngIf="testeAdmin">
               <div >
                 <a *ngIf="testeAdmin" [routerLink]="['/categoria-listar']">Listar categorias</a>
               </div>
-              <hr>
+              <hr *ngIf="testeAdmin">
               
             </div>
           </form>
