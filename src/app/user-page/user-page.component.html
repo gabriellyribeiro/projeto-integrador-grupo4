@@ -17,9 +17,7 @@
           <div class="row">
             <div class="col-sm-5">
               <div class="thumbnails">
-                <div><a class="thumbnail fancybox"  title=""><img src="" title="" alt="Foto do usuario" /></a></div>
                 
-              </div>
             </div>
             <div  class="col-sm-7 prodetail">
               <h1 class="productpage-title">{{user}}</h1>
@@ -38,10 +36,11 @@
                   <span> {{tipo}}</span></li>
                 </ul>
               <hr>
+              <button class="btn btn-danger" title="" value="Logout" data-toggle="tooltip" type="button" data-original-title="Logout" (click)= "logout()"><i >Sair</i></button>
             </div>
           </div>
 
-          <button  class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove" (click)= "logout()"><i class="fa fa-times-circle"></i></button>
+          <!--<button  class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove" (click)= "logout()"><i class="fa fa-times-circle"></i></button>-->
 
           <form  enctype="multipart/form-data" method="post" action="#">
             <div class="table-responsive">
@@ -61,12 +60,15 @@
                     <td class="text-center"><a href=""><img class="img-thumbnail" title="Produto" alt="Produto" src=""></a></td>
                     <td class="text-left"><a href="">Teste</a></td>
                     <td class="text-left">product 11</td>
-                    <td class="text-left"><div style="max-width: 200px;" class="input-group btn-block">
+                    <td class="text-left">
+                      <div style="max-width: 200px;" class="input-group btn-block">
                         <input type="text" class="form-control quantity" size="1" value="1" name="quantity">
                         <span class="input-group-btn">
-                        <button class="btn btn-primary" title="" data-toggle="tooltip" type="submit" data-original-title="Update"><i class="fa fa-refresh"></i></button>
-                        <button  class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove" (click)= "logout()"><i ></i></button>
-                        </span></div></td>
+                        
+                       <!-- <button class="btn btn-danger" title="" data-toggle="tooltip" type="button" data-original-title="Remove" (click)= "logout()"><i ></i></button>-->
+                        </span>
+                      </div>
+                    </td>
                     <td class="text-right">R$254.00</td>
                     
                   </tr>
@@ -75,12 +77,15 @@
               <div >
                 <a *ngIf="testeAdmin" [routerLink]="['/usuario-listar']">Listar usuarios</a>
                 </div>
+                <hr>
               <div >
                 <a *ngIf="testeAdmin" [routerLink]="['/vendedor-listar']">Listar vendedores</a>
               </div>
+              <hr>
               <div >
                 <a *ngIf="testeAdmin" [routerLink]="['/categoria-listar']">Listar categorias</a>
               </div>
+              <hr>
               
             </div>
           </form>

@@ -17,6 +17,7 @@
     color: black;
     text-align: center;
     margin-bottom: 15px;
+    margin-top: 28px;
 }
 
 #linha {
@@ -24,10 +25,6 @@
     border-top: 1px solid #e91c57;
 }
 
-.imgsobre {
-    width: 398px;
-    height: 353px;
-}
 
 .desc {
     margin-right: 16px;
