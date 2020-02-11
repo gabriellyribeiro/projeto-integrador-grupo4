@@ -75,7 +75,7 @@
                 </div>
                 <!-- tab-furniture-->
                 <div id="tab-furnitur" class="tab-content">
-                    <div class="product-layout  product-grid  col-lg-3 col-md-4 col-sm-6 col-xs-12" *ngFor="let product of products">
+                    <div class="product-layout  product-grid  col-lg-3 col-md-4 col-sm-6 col-xs-12" *ngFor="let product of products| slice:0:8; let i=index">
                         <div class="item">
                             <div class="product-thumb">
                                 <div class="image product-imageblock">

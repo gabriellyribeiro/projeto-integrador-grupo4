@@ -103,6 +103,7 @@ export class HomeComponent implements OnInit {
   findAll(){
     this.productService.getAll().subscribe((productOut: Product[]) =>{
       this.products = productOut;
+      console.log(this.products[0].nome);
      
     });
   }
